@@ -1,57 +1,74 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
 using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class LobbyPlayersManager : MonoBehaviour
 {
-    /// <summary>
-    /// mock list of players
-    /// </summary>
-    private List<LobbyPlayer> lobbyPlayers = new List<LobbyPlayer>
-    {
-        new LobbyPlayer(Guid.NewGuid(), 102, "Sparg Copacu", "Mage"),
-        new LobbyPlayer(Guid.NewGuid(), 12, "Rup Brandu", "Warior"),
-        new LobbyPlayer(Guid.NewGuid(), 45, "Dau cu Sapa", "Cleric"),
-        new LobbyPlayer(Guid.NewGuid(), 13, "Rup Lopata", "Rogue"),
-    };
+    private List<GameObject> playerPanels;
+    private int playersNumber;
 
-    private static List<GameObject> playerPanels;
-    public GameObject playerPane;
+    public GameObject playerPanePrefab;
     public GameObject playersScrollArea;
-    private static int playersNumber;
-    void Start()
+    public LobbyManager lobbyManager;
+
+    public void Start()
     {
         playerPanels = new List<GameObject>();
         playersNumber = 1;
-        lobbyPlayers.ForEach(player => {
-            AddPlayerToLobby(player);
-        });
+        Enumerable.Repeat(1, 5).ToList().ForEach(x => AddMockPlayer());
     }
 
     public void AddPlayerToLobby(LobbyPlayer player)
     {
-        GameObject pane = Instantiate(playerPane, Vector3.zero, Quaternion.identity, playersScrollArea.transform);
+        GameObject pane = Instantiate(playerPanePrefab, Vector3.zero, Quaternion.identity, playersScrollArea.transform);
         pane.GetComponent<PlayerPanel>().SetPlayer(player, playersNumber);
+        pane.GetComponent<PlayerPanel>().manager = this;
         playersNumber += 1;
         playerPanels.Add(pane);
+        lobbyManager.UpdatePlayerReccomandationRoles();
     }
 
     public void AddMockPlayer()
     {
-        GameObject pane = Instantiate(playerPane, Vector3.zero, Quaternion.identity, playersScrollArea.transform);
-        pane.GetComponent<PlayerPanel>().SetPlayer(new LobbyPlayer(Guid.NewGuid(), 13, "Mock Player", "sda"), playersNumber);
-        playersNumber += 1;
-        playerPanels.Add(pane);
+        AddPlayerToLobby(new LobbyPlayer(Guid.NewGuid(), 13, "Mock Player " + playersNumber, Role.WARRIOR));     
     }
 
-    public static void KickPlayer(Guid id)
+    public void KickPlayer(Guid id)
     {
         GameObject playerPanelToDelete = playerPanels
-            .FirstOrDefault(x => x.GetComponent<PlayerPanel>().lobbyPlayer.id == id);
+            .FirstOrDefault(x => x.GetComponent<PlayerPanel>().LobbyPlayer.id == id);
         playerPanels.Remove(playerPanelToDelete);
         Destroy(playerPanelToDelete);
+        lobbyManager.UpdatePlayerReccomandationRoles();
     }
-  
+
+    public List<LobbyPlayer> GetPlayers()
+    {
+        return playerPanels
+            .Select(x => x.GetComponent<PlayerPanel>().LobbyPlayer)
+            .ToList();
+    }
+
+    public void HideKickButton()
+    {
+        playerPanels.ForEach(panel => panel.transform.GetChild(panel.transform.childCount - 1).GetComponent<Button>().interactable = false);
+    }
+
+    public void ShowKickButton()
+    {
+        playerPanels.ForEach(panel => panel.transform.GetChild(panel.transform.childCount - 1).GetComponent<Button>().interactable = true);
+    }
+
+    public void HideMuteButton()
+    {
+        playerPanels.ForEach(panel => panel.transform.GetChild(panel.transform.childCount - 2).GetComponent<Button>().interactable = false);
+    }
+
+    public void ShowMuteButton()
+    {
+        playerPanels.ForEach(panel => panel.transform.GetChild(panel.transform.childCount - 2).GetComponent<Button>().interactable = true);
+    }
 }
