@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\rober\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\rober\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_UnityProject.791769772.00" t="ExcludeRecursive" />
+    <e p="C:\Users\rober\Documents\GitHub\DungeonsAndDragons-Online-IP2020-B1\UnityProject" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="RestClient" t="Include">
+          <e p="DemoScene" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="MainScript.cs" t="Include" />
+              <e p="Model" t="Include">
+                <e p="Photo.cs" t="Include" />
+                <e p="Post.cs" t="Include" />
+                <e p="Todo.cs" t="Include" />
+                <e p="User.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="packages" t="Include">
+            <e p="Proyecto26.RestClient" t="Include">
+              <e p="Helpers" t="Include">
+                <e p="Common.cs" t="Include" />
+                <e p="Extensions.cs" t="Include" />
+                <e p="HttpBase.cs" t="Include" />
+                <e p="JsonHelper.cs" t="Include" />
+                <e p="RequestException.cs" t="Include" />
+                <e p="RequestHelper.cs" t="Include" />
+                <e p="RequestHelperExtension.cs" t="Include" />
+                <e p="ResponseHelper.cs" t="Include" />
+                <e p="StaticCoroutine.cs" t="Include" />
+              </e>
+              <e p="RestClient.cs" t="Include" />
+              <e p="RestClientPromise.cs" t="Include" />
+            </e>
+            <e p="RSG.Promise" t="Include">
+              <e p="EnumerableExt.cs" t="Include" />
+              <e p="Exceptions" t="Include">
+                <e p="PromiseException.cs" t="Include" />
+                <e p="PromiseStateException.cs" t="Include" />
+              </e>
+              <e p="Promise.cs" t="Include" />
+              <e p="Promise_NonGeneric.cs" t="Include" />
+              <e p="PromiseHelpers.cs" t="Include" />
+              <e p="PromiseTimer.cs" t="Include" />
+              <e p="Tuple.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Chat" t="Include">
+            <e p="ChatMessage.cs" t="Include" />
+            <e p="MessagesManager.cs" t="Include" />
+          </e>
+          <e p="Conectivitate" t="Include">
+            <e p="Authentication" t="Include">
+              <e p="Controllers" t="Include">
+                <e p="AuthenticationController.cs" t="Include" />
+              </e>
+              <e p="Models" t="Include">
+                <e p="AuthResponse.cs" t="Include" />
+                <e p="RegisterPayload.cs" t="Include" />
+                <e p="User.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Lobby" t="Include">
+            <e p="LobbyPlayer.cs" t="Include" />
+            <e p="LobbyPlayersManager.cs" t="Include" />
+            <e p="PlayerPanel.cs" t="Include" />
+          </e>
+          <e p="Login.cs" t="Include" />
+          <e p="Register.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="UnityProject.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Text.RegularExpressions;
+using Conectivitate.Authentication.Models;
 using UnityEngine.UI;
 
 public class Register : MonoBehaviour
@@ -24,20 +25,9 @@ public class Register : MonoBehaviour
     }
 
     public void RegisterButton(){
-        /*bool UN=false;
-        bool EM=false;
-        bool PW=false;
-        bool CPW=false;
-        if(Username!=""){
-            if(System.IO.File.Exists(@"C:/Users/Tudor/Dungeons&Dragons/"+Username+".txt")){
-                Debug.LogWarning("Username Taken!");
-        }
-        else{
-           UN=true;
-        }
-        }
-        else Debug.LogWarning("Username field is empty!");*/
-        print("Registration Successful!");
+        AuthenticationController auth = new AuthenticationController();
+        auth.RegisterUser(new RegisterPayload(this.Username, this.Email, this.Password));
+
     }
 
     // Update is called once per frame
