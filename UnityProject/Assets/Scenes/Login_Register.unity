@@ -2661,6 +2661,7 @@ GameObject:
   - component: {fileID: 1899258602}
   - component: {fileID: 1899258604}
   - component: {fileID: 1899258603}
+  - component: {fileID: 1899258605}
   m_Layer: 5
   m_Name: Register
   m_TagString: Untagged
@@ -2732,6 +2733,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899258601}
   m_CullTransparentMesh: 0
+--- !u!114 &1899258605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899258601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa862330e36a0149a9172ba6193f147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  username: {fileID: 1741857364}
+  email: {fileID: 1855430978}
+  password: {fileID: 1993879215}
+  confPassword: {fileID: 1647657176}
 --- !u!1 &1992950592
 GameObject:
   m_ObjectHideFlags: 0
