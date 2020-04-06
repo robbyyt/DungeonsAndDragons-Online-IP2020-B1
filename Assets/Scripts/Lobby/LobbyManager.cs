@@ -10,8 +10,10 @@ public class LobbyManager : MonoBehaviour
     private List<RoleRecommendation> roleRecommendationList;
     public LobbyPlayersManager lobbyPlayersManager;
 
+    
     public GameObject ScenarioDescriprionPanel;
     public GameObject RecommandedRolesPanel;
+
     public Button StartButton;
 
     public bool IsGameMaster;
