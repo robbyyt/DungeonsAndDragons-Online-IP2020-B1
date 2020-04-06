@@ -60,7 +60,7 @@
               </e>
               <e p="Models" t="Include">
                 <e p="AuthResponse.cs" t="Include" />
-                <e p="RegisterPayload.cs" t="Include" />
+                <e p="NewUserRegister.cs" t="Include" />
                 <e p="User.cs" t="Include" />
               </e>
             </e>

@@ -4,13 +4,15 @@
     {
         public string userName;
         public string localId;
-        public string idToken;
 
-        public User(string userName, string localId, string idToken)
+        public User()
+        {
+        }
+
+        public User(string userName, string localId)
         {
             this.userName = userName;
             this.localId = localId;
-            this.idToken = idToken;
         }
     }
 }

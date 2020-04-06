@@ -12,31 +12,41 @@ public class Login : MonoBehaviour
     private string Username;
     private string Password;
     private string form;
-    private bool EmailValid=false;
+
+    private bool EmailValid = false;
+
     // Start is called before the first frame update
     void Start()
     {
     }
 
-    public void LoginButton(){
+    public void LoginButton()
+    {
         print("Login Successful!");
         Application.LoadLevel("Start Menu");
         //ScreenManager.LoadScene("Start Menu");
     }
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab)){
-            if(username.GetComponent<InputField>().isFocused){
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (username.GetComponent<InputField>().isFocused)
+            {
                 password.GetComponent<InputField>().Select();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Return)){
-            if(Username!=""&&Password!=""){
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (Username != "" && Password != "")
+            {
                 LoginButton();
             }
         }
-        Username=username.GetComponent<InputField>().text;
-        Password=password.GetComponent<InputField>().text;
+
+        Username = username.GetComponent<InputField>().text;
+        Password = password.GetComponent<InputField>().text;
     }
 }

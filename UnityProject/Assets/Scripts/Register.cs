@@ -23,13 +23,7 @@ public class Register : MonoBehaviour
     {
         
     }
-
-    public void RegisterButton(){
-        AuthenticationController auth = new AuthenticationController();
-        auth.RegisterUser(new RegisterPayload(this.Username, this.Email, this.Password));
-
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -42,11 +36,6 @@ public class Register : MonoBehaviour
             }
             if(password.GetComponent<InputField>().isFocused){
                 confPassword.GetComponent<InputField>().Select();
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.Return)){
-            if(Username!=""&&Email!=""&&Password!=""&&ConfPassword!=""){
-                RegisterButton();
             }
         }
         Username=username.GetComponent<InputField>().text;
