@@ -1,5 +1,6 @@
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class Game {
   protected List<User> users;
@@ -9,6 +10,9 @@ public class Game {
   protected OutcomeTurn outcome;
   protected PlayerInput playerInput;
   protected int socket;
+  public boolean checkConnection(int id ){
+    return true;
+  }
 
   public List<User> getUsers() {
     return users;
@@ -41,6 +45,7 @@ public class Game {
   public void setOutcome(OutcomeTurn outcome) {
     this.outcome = outcome;
   }
+
 
   public PlayerInput getPlayerInput() {
     return playerInput;
