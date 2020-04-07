@@ -75,4 +75,46 @@ public class AuthenticationController : MonoBehaviour
     {
         RestClient.Put(databaseURL + "/" + user.localId + ".json?auth=" + idToken, user);
     }
+
+    public void LoginUserButton()
+    {
+        if(signInEmailText.text != "" && signInPasswordText.text != "")
+        {
+            LoginUser("robert.tabacaru@yahoo.com", signInPasswordText.text);
+        }
+    }
+    private void LoginUser(string email,string password)
+    {
+        RequestHelper currentRequest = new RequestHelper
+        {
+            Uri = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword",
+            Params = new Dictionary<string, string>
+            {
+                {"key", authKey}
+            },
+            Body = new NewUserRegister
+            {
+                email = email,
+                password = password,
+                returnSecureToken = true
+            },
+            EnableDebug = true
+        };
+        RestClient.Post<AuthResponse>(currentRequest).Then(
+            response =>
+            {
+                Debug.Log("Response:");
+                idToken = response.idToken;
+                user.localId = response.localId;
+                
+                GetUsernameFromDatabase(user);
+            }).Catch(error => { Debug.Log(error); });
+    }
+    private void GetUsernameFromDatabase(User user)
+    {
+        RestClient.Get<User>(databaseURL + "/" + user.localId + ".json?auth=" + idToken).Then(response =>
+        {
+            user.userName = response.userName;
+        });
+    }
 }
