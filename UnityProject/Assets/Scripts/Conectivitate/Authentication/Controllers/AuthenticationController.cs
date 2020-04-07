@@ -40,9 +40,11 @@ public class AuthenticationController : MonoBehaviour
             registerPasswordText.text.Equals(registerConfirmPasswordText.text))
         {
             RegisterUser(registerEmailText.text, registerUsernameText.text, registerPasswordText.text);
+            Application.LoadLevel("Start Menu");
         }
     }
 
+    //Populeaza informatiile din user daca se poate crea contul, altfel vom avea o eroare HTTP BAD REQUEST de la serverul firebase
     private void RegisterUser(string email, string username, string password)
     {
         RequestHelper currentRequest = new RequestHelper
@@ -71,19 +73,24 @@ public class AuthenticationController : MonoBehaviour
             }).Catch(error => { Debug.Log(error); });
     }
 
+    //Posteaza in baza de date informatiile despre utilizatorul primit(username, si pe viitor si alte detalii)
     public void PostToDatabase(User user)
     {
         RestClient.Put(databaseURL + "/" + user.localId + ".json?auth=" + idToken, user);
     }
 
+    //Cand utilizatorul apasa pe login button
     public void LoginUserButton()
     {
-        if(signInEmailText.text != "" && signInPasswordText.text != "")
+        if (signInEmailText.text != "" && signInPasswordText.text != "")
         {
             LoginUser("robert.tabacaru@yahoo.com", signInPasswordText.text);
+            Application.LoadLevel("Start Menu");
         }
     }
-    private void LoginUser(string email,string password)
+
+    //Returneaza datele utilizatorului, sau eroare in caz ca e introdus un mail gresit
+    private void LoginUser(string email, string password)
     {
         RequestHelper currentRequest = new RequestHelper
         {
@@ -106,10 +113,12 @@ public class AuthenticationController : MonoBehaviour
                 Debug.Log("Response:");
                 idToken = response.idToken;
                 user.localId = response.localId;
-                
+
                 GetUsernameFromDatabase(user);
             }).Catch(error => { Debug.Log(error); });
     }
+
+    //Pentru a obtine username-ul, posibil pe viitor si alte date, din baza de date firebase
     private void GetUsernameFromDatabase(User user)
     {
         RestClient.Get<User>(databaseURL + "/" + user.localId + ".json?auth=" + idToken).Then(response =>
