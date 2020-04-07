@@ -1658,8 +1658,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 131801550}
-        m_MethodName: LoginButton
+      - m_Target: {fileID: 425097526}
+        m_MethodName: LoginUserButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
