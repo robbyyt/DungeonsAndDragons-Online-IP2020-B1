@@ -1,4 +1,4 @@
-package org.letos;
+
 
 public abstract class Npc {
     NpcType type;
