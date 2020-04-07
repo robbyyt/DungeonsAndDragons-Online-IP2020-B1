@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public enum Role
 {
     MAGE, WARRIOR, CLERIC, ROGUE, ARCHER
