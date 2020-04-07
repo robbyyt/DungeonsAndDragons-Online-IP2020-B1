@@ -1,4 +1,3 @@
-package org.letos;
 
 public class App 
 {
