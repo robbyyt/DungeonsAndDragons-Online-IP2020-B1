@@ -42,8 +42,8 @@ MonoBehaviour:
     y: 0
     width: 481
     height: 355
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 224}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 274}
   m_MaxSize: {x: 14006, y: 10024}
   vertical: 0
-  controlID: 63
+  controlID: 68
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 398}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 1
-  controlID: 100
+  controlID: 118
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 398}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
-  controlID: 101
+  controlID: 119
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 398}
   m_MaxSize: {x: 14006, y: 14048}
   vertical: 1
-  controlID: 102
+  controlID: 120
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -418,9 +418,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1104.7394, y: 591.7811, z: -4.5}
+    m_Target: {x: 1127.2793, y: 830.7882, z: -1.1067079}
     speed: 2
-    m_Value: {x: 1104.7394, y: 591.7811, z: -4.5}
+    m_Value: {x: 1127.2793, y: 830.7882, z: -1.1067079}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -452,9 +452,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: -1}
   m_Size:
-    m_Target: 1381.306
+    m_Target: 1045.7548
     speed: 2
-    m_Value: 1381.306
+    m_Value: 1045.7548
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -628,20 +628,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Lobby/Characters/Managers
+    - Assets/Images
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets/Scripts/Lobby/Characters/Managers
+  - Assets/Images
   m_LastFoldersGridSize: 57
   m_LastProjectPath: C:\Users\BLAGA\Desktop\DOD IP\Dungeons And Dragons
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 22}
-    m_SelectedIDs: d4560000
-    m_LastClickedID: 22228
-    m_ExpandedIDs: 0000000036260000682600001e270000402800009028000012290000c82e0000ca2e000000ca9a3b
+    m_SelectedIDs: d4280000
+    m_LastClickedID: 10452
+    m_ExpandedIDs: 000000003a2600006c2600002427000048280000982800001a290000ec2f0000ee2f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -669,7 +669,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003626000068260000402800009028000012290000c82e0000ca2e0000
+    m_ExpandedIDs: 000000003a2600006c2600002427000048280000982800001a290000ec2f0000ee2f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -752,24 +752,24 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 34}
-      m_SelectedIDs: e0290000
-      m_LastClickedID: 10720
-      m_ExpandedIDs: 2eb2ffff4ebbffffc0caffff6ecdffff58f0ffffd4fbffff562a0000c02c0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 9e360000
+      m_LastClickedID: 13982
+      m_ExpandedIDs: 7af9ffff60faffff9efaffffbefaffffd4fbffff0036000078360000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Header (1)
-        m_OriginalName: Header (1)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -13418
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 2}
       m_SearchString: 
