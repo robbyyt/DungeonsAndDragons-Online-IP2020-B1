@@ -20,7 +20,7 @@ public class Login : MonoBehaviour
 
     public void LoginButton(){
         print("Login Successful!");
-        Application.LoadLevel("Start Menu");
+        Application.LoadLevel("LobbyMenu");
         //ScreenManager.LoadScene("Start Menu");
     }
     // Update is called once per frame
