@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 803320100c6846578b22ffd8d78cfc2a
+labels:
+- gvh
+- gvh_manifest
+- gvh_version-6.13.0
+- gvhp_exportpath-Firebase/Editor/FirebaseDatabase_version-6.13.0_manifest.txt
+- gvhp_exportpath-Firebase\Editor\FirebaseDatabase_version-6.13.0_manifest.txt
+- gvhp_manifestname-0Firebase Realtime Database
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
