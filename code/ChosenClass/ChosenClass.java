@@ -1,3 +1,4 @@
+package ChosenClass;
 
 public abstract class ChosenClass {
 	private Skills skills;

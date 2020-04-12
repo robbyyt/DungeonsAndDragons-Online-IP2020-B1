@@ -1,5 +1,9 @@
+package NPC;
 
-public class App 
+import NPC.FriendlyNpc;
+import NPC.MonsterNpc;
+
+public class App
 {
     public static void main( String[] args )
     {

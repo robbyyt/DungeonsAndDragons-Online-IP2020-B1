@@ -1,4 +1,5 @@
+package ChosenClass;
 
 public enum RaceType {
-	Human,Dwarf,Elf,Halting;
+	Human,Dwarf,Elf,Halting
 }

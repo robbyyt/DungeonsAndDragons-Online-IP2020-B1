@@ -1,3 +1,8 @@
+package User;
+
+import GameClass.Game;
+import NPC.Npc;
+
 import java.util.*;
 public class DungeonMaster extends User
 {

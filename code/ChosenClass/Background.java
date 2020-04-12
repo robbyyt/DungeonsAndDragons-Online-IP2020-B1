@@ -1,4 +1,5 @@
+package ChosenClass;
 
 public enum Background {
-	Acolyte,Criminal,Soldier,FolkHero,Noble,Sage;
+	Acolyte,Criminal,Soldier,FolkHero,Noble,Sage
 }
