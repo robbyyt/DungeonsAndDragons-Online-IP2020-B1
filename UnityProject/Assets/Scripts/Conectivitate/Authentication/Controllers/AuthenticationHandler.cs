@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Conectivitate.Authentication.Models;
+using Conectivitate.Database;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -166,23 +168,20 @@ public class AuthenticationHandler : MonoBehaviour {
             DebugLog("Password does not match");
             return;
         }
-        else
-        {
-            auth.CreateUserWithEmailAndPasswordAsync(email, password)
-                .ContinueWith(task => {
-                
-                    return HandleCreateUserAsync(task, newDisplayName: newDisplayName);
-                }).Unwrap();
-            
-        }
-      
+        
+        auth.CreateUserWithEmailAndPasswordAsync(email, password)
+            .ContinueWith(task => { 
+                return HandleCreateUserAsync(task, newDisplayName: newDisplayName);
+            }).Unwrap();
     } 
-    Task HandleCreateUserAsync(Task<Firebase.Auth.FirebaseUser> authTask,
-        string newDisplayName = null) {
+    
+    Task HandleCreateUserAsync(Task<Firebase.Auth.FirebaseUser> authTask, string newDisplayName = null) {
         if (LogTaskCompletion(authTask, "User Creation")) {
             if (auth.CurrentUser != null) {
                 DebugLog(String.Format("User Info: {0}  {1}", auth.CurrentUser.Email,
                     auth.CurrentUser.ProviderId));
+                DatabaseHandler databaseHandler=new DatabaseHandler();
+                databaseHandler.addUserToDatabase(new User(username, auth.CurrentUser.UserId));
                 return UpdateUserProfileAsync(newDisplayName: newDisplayName);
             }
         }
@@ -201,7 +200,6 @@ public class AuthenticationHandler : MonoBehaviour {
         return auth.CurrentUser.UpdateUserProfileAsync(new Firebase.Auth.UserProfile
         {
             DisplayName = displayName,
-
         });
       }
     
