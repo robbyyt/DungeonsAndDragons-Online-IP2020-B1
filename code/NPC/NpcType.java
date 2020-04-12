@@ -1,5 +1,5 @@
-
+package NPC;
 
 public enum NpcType {
-     MonsterNpc, FriendlyNpc;
+     MonsterNpc, FriendlyNpc
 }

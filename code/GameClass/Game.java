@@ -1,3 +1,11 @@
+package GameClass;
+
+import DatabaseConnection.DatabaseConnection;
+import DatabaseConnection.PlayerInput;
+import GameClass.OutcomeTurn;
+import User.DungeonMaster;
+import User.User;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;

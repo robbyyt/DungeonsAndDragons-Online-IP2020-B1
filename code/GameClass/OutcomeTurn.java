@@ -1,3 +1,7 @@
+package GameClass;
+
+import User.User;
+
 import java.util.Arrays;
 import java.util.List;
 

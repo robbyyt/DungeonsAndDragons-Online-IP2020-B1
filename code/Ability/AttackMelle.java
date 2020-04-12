@@ -1,4 +1,4 @@
-
+package Ability;
 
 public class AttackMelle extends  Ability {
     AttackMelle(){

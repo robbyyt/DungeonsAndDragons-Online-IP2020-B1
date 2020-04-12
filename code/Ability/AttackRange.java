@@ -1,4 +1,4 @@
-
+package Ability;
 
 public class AttackRange extends Ability {
     AttackRange(){

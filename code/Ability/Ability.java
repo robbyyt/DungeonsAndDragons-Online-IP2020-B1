@@ -1,4 +1,4 @@
-
+package Ability;
 
 public abstract class Ability {
     protected int value;

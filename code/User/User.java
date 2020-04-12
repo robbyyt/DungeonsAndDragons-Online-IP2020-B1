@@ -1,5 +1,7 @@
+package User;
+
 abstract public class User {
-    private int id;
+    public int id;
     public int getId() {
         return id;
     }
