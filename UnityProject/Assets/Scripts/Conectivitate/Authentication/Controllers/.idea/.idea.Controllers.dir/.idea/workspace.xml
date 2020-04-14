@@ -35,7 +35,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/ajutator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Login.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -94,6 +93,9 @@
       <workItem from="1586624200382" duration="2712000" />
       <workItem from="1586692172426" duration="2524000" />
       <workItem from="1586694981316" duration="14104000" />
+      <workItem from="1586710945711" duration="157000" />
+      <workItem from="1586711365912" duration="254000" />
+      <workItem from="1586877165711" duration="2981000" />
     </task>
     <servers />
   </component>
