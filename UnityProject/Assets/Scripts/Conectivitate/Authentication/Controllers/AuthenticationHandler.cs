@@ -238,8 +238,3 @@ public class AuthenticationHandler : MonoBehaviour {
     }
   
 }
-
-  
-
-   
-    
