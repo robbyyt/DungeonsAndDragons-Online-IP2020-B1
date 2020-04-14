@@ -9,23 +9,12 @@ public class Login : MonoBehaviour
 {
     public GameObject username;
     public GameObject password;
-    private string Username;
-    private string Password;
-    private string form;
-
-    private bool EmailValid = false;
 
     // Start is called before the first frame update
     void Start()
     {
     }
 
-    public void LoginButton()
-    {
-        print("Login Successful!");
-        Application.LoadLevel("Start Menu");
-        //ScreenManager.LoadScene("Start Menu");
-    }
 
     // Update is called once per frame
     void Update()
@@ -37,16 +26,5 @@ public class Login : MonoBehaviour
                 password.GetComponent<InputField>().Select();
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (Username != "" && Password != "")
-            {
-                LoginButton();
-            }
-        }
-
-        Username = username.GetComponent<InputField>().text;
-        Password = password.GetComponent<InputField>().text;
     }
 }
