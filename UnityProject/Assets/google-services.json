@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "675754817318",
+    "firebase_url": "https://dungeonsanddragons-ip2020.firebaseio.com",
+    "project_id": "dungeonsanddragons-ip2020",
+    "storage_bucket": "dungeonsanddragons-ip2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675754817318:android:15c6358cc49053d2aaf3e7",
+        "android_client_info": {
+          "package_name": "com.IP.DungeonsAndDragons"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "675754817318-cl1vlhbtfl5nhe0t0ueulgut9171evrp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBWdpl37alYDXZc9_puMOcBSmkZ4a94oY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "675754817318-cl1vlhbtfl5nhe0t0ueulgut9171evrp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
