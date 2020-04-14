@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d7310b4-558f-49de-87b7-2bf2bf8de029" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Login.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Login.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Register.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Register.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +17,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RestClient/Packages/Proyecto26.RestClient/Helpers/HttpBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Register.cs" root0="FORCE_HIGHLIGHTING" />
@@ -36,16 +38,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Controllers/AuthenticationController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/RegisterPayload.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AuthResponse.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/NewUserRegister.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/DatabaseCommunication.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Register.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Login.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1aAhWvTXrsbUNKwpkWpbM28wb72" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -94,6 +101,8 @@
       <workItem from="1586192956555" duration="364000" />
       <workItem from="1586193502919" duration="2584000" />
       <workItem from="1586283590890" duration="285000" />
+      <workItem from="1586715619932" duration="6526000" />
+      <workItem from="1586879687553" duration="774000" />
     </task>
     <servers />
   </component>

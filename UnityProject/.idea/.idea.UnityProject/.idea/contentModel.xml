@@ -6,6 +6,28 @@
     <e p="C:\Users\rober\Documents\GitHub\DungeonsAndDragons-Online-IP2020-B1\UnityProject" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Firebase" t="Include">
+          <e p="m2repository" t="Include">
+            <e p="com" t="Include">
+              <e p="google" t="Include">
+                <e p="Firebase" t="Include">
+                  <e p="firebase-app-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                  <e p="firebase-auth-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                  <e p="firebase-database-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                  <e p="firebase-storage-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="RestClient" t="Include">
           <e p="DemoScene" t="Include">
             <e p="Scripts" t="Include">
@@ -56,13 +78,16 @@
           <e p="Conectivitate" t="Include">
             <e p="Authentication" t="Include">
               <e p="Controllers" t="Include">
-                <e p="AuthenticationController.cs" t="Include" />
+                <e p="AuthenticationHandler.cs" t="Include" />
               </e>
               <e p="Models" t="Include">
                 <e p="AuthResponse.cs" t="Include" />
                 <e p="NewUserRegister.cs" t="Include" />
                 <e p="User.cs" t="Include" />
               </e>
+            </e>
+            <e p="Database" t="Include">
+              <e p="DatabaseHandler.cs" t="Include" />
             </e>
           </e>
           <e p="Lobby" t="Include">
