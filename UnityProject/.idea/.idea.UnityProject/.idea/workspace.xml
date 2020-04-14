@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8d7310b4-558f-49de-87b7-2bf2bf8de029" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" afterDir="false" />
->>>>>>> 32179c756b91315a4017181cc0eda475bd28e3f3
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,13 +16,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-<<<<<<< HEAD
-=======
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Login.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" root0="FORCE_HIGHLIGHTING" />
->>>>>>> 32179c756b91315a4017181cc0eda475bd28e3f3
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
@@ -113,15 +106,8 @@
       <workItem from="1586192956555" duration="364000" />
       <workItem from="1586193502919" duration="2584000" />
       <workItem from="1586283590890" duration="285000" />
-<<<<<<< HEAD
-      <workItem from="1586715619932" duration="6526000" />
-      <workItem from="1586879687553" duration="774000" />
-      <workItem from="1586886545236" duration="209000" />
-      <workItem from="1586886767327" duration="546000" />
-=======
       <workItem from="1586715619932" duration="6764000" />
       <workItem from="1586870958492" duration="6486000" />
->>>>>>> 32179c756b91315a4017181cc0eda475bd28e3f3
     </task>
     <servers />
   </component>
