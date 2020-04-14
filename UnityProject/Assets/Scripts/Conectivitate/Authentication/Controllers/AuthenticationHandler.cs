@@ -169,11 +169,11 @@ public class AuthenticationHandler : MonoBehaviour {
             DebugLog("Password does not match");
             return;
         }
-        
-        auth.CreateUserWithEmailAndPasswordAsync(email, password)
+        auth.CreateUserWithEmailAndPasswordAsync("cata.sene12@gmail.com", password)
             .ContinueWith(task => { 
                 return HandleCreateUserAsync(task, newDisplayName: newDisplayName);
             }).Unwrap();
+        
     } 
     
     Task HandleCreateUserAsync(Task<Firebase.Auth.FirebaseUser> authTask, string newDisplayName = null) {
@@ -186,13 +186,31 @@ public class AuthenticationHandler : MonoBehaviour {
                 Debug.Log("Adding to db..");
                 databaseHandler.AddUserToDatabase(new User(username, auth.CurrentUser.UserId));
                 Debug.Log("Added to db..");
+                mailVerification(auth.CurrentUser);
                 return UpdateUserProfileAsync(newDisplayName: newDisplayName);
             }
         }
         // Nothing to update, so just return a completed Task.
         return Task.FromResult(0);
     }
-    
+
+    public void mailVerification(Firebase.Auth.FirebaseUser user)
+    {
+        if (user != null) {
+            user.SendEmailVerificationAsync().ContinueWith(task => {
+                if (task.IsCanceled) {
+                    Debug.LogError("canceled.");
+                    return;
+                }
+                if (task.IsFaulted) {
+                    Debug.LogError("encountered an error: " + task.Exception);
+                    return;
+                }
+
+                Debug.Log("Email sent successfully.");
+            });
+        }
+    }
     // Update the user's display name with the currently selected display name.
     public Task UpdateUserProfileAsync(string newDisplayName = null) {
         if (auth.CurrentUser == null) {
@@ -233,23 +251,23 @@ public class AuthenticationHandler : MonoBehaviour {
     
     //functia verifica daca este un user logat in momentul apelarii. (variabila de tipul bool tine evidenta logarii unui user) Daca nu e nimeni logat,
     //apare in consola mesajul respectiv si se face return. Daca e cinema logat se apeleaza metoda auth.SignOut(), UserSignedIn devine false (nu mai e nimeni logat) si se transfera la scena Login_Register
-     public void SignOut() {
-         
-         if (UserSignedIn == false)
-         {
-             DebugLog("Can't Sign Out, the user is not Signed In");
-             return;
-         }
-         else
-         {
-             DebugLog("Signing out");
-             auth.SignOut();
-             UserSignedIn = false;
-             SceneManager.LoadSceneAsync("Login_Register");
-         }
-     }
-   
-    
+    public void SignOut()
+    {
+
+        if (UserSignedIn == false)
+        {
+            DebugLog("Can't Sign Out, the user is not Signed In");
+            return;
+        }
+        else
+        {
+            DebugLog("Signing out");
+            auth.SignOut();
+            UserSignedIn = false;
+            SceneManager.LoadSceneAsync("Login_Register");
+        }
+    }
+
     void HandleGetUserToken(Task<string> authTask) {
         fetchingToken = false;
         if (LogTaskCompletion(authTask, "User token fetch")) {
