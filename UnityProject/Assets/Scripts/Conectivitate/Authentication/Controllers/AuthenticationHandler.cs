@@ -28,6 +28,7 @@ public class AuthenticationHandler : MonoBehaviour {
     protected string LoginEmail = "";
     protected string LoginPassword = "";
     private bool fetchingToken = false;
+    private bool UserSignedIn = false;
     const int kMaxLogSize = 16382;
     Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
 
@@ -179,9 +180,12 @@ public class AuthenticationHandler : MonoBehaviour {
         if (LogTaskCompletion(authTask, "User Creation")) {
             if (auth.CurrentUser != null) {
                 DebugLog(String.Format("User Info: {0}  {1}", auth.CurrentUser.Email,
-                    auth.CurrentUser.ProviderId));
-                DatabaseHandler databaseHandler=new DatabaseHandler();
-                databaseHandler.addUserToDatabase(new User(username, auth.CurrentUser.UserId));
+                    auth.CurrentUser.UserId));
+
+                DatabaseHandler databaseHandler = new DatabaseHandler();
+                Debug.Log("Adding to db..");
+                databaseHandler.AddUserToDatabase(new User(username, auth.CurrentUser.UserId));
+                Debug.Log("Added to db..");
                 return UpdateUserProfileAsync(newDisplayName: newDisplayName);
             }
         }
@@ -212,6 +216,7 @@ public class AuthenticationHandler : MonoBehaviour {
     
     void HandleSigninResult(Task<Firebase.Auth.FirebaseUser> authTask) {
         LogTaskCompletion(authTask, "Sign-in");
+        UserSignedIn = true;
         SceneManager.LoadSceneAsync("Start Menu");
     }
     
@@ -226,6 +231,24 @@ public class AuthenticationHandler : MonoBehaviour {
         auth.CurrentUser.TokenAsync(false).ContinueWith(HandleGetUserToken);
     }
     
+    //functia verifica daca este un user logat in momentul apelarii. (variabila de tipul bool tine evidenta logarii unui user) Daca nu e nimeni logat,
+    //apare in consola mesajul respectiv si se face return. Daca e cinema logat se apeleaza metoda auth.SignOut(), UserSignedIn devine false (nu mai e nimeni logat) si se transfera la scena Login_Register
+     public void SignOut() {
+         
+         if (UserSignedIn == false)
+         {
+             DebugLog("Can't Sign Out, the user is not Signed In");
+             return;
+         }
+         else
+         {
+             DebugLog("Signing out");
+             auth.SignOut();
+             UserSignedIn = false;
+             SceneManager.LoadSceneAsync("Login_Register");
+         }
+     }
+   
     
     void HandleGetUserToken(Task<string> authTask) {
         fetchingToken = false;
