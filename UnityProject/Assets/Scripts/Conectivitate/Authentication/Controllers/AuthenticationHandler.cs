@@ -179,9 +179,12 @@ public class AuthenticationHandler : MonoBehaviour {
         if (LogTaskCompletion(authTask, "User Creation")) {
             if (auth.CurrentUser != null) {
                 DebugLog(String.Format("User Info: {0}  {1}", auth.CurrentUser.Email,
-                    auth.CurrentUser.ProviderId));
-                DatabaseHandler databaseHandler=new DatabaseHandler();
-                databaseHandler.addUserToDatabase(new User(username, auth.CurrentUser.UserId));
+                    auth.CurrentUser.UserId));
+
+                DatabaseHandler databaseHandler = new DatabaseHandler();
+                Debug.Log("Adding to db..");
+                databaseHandler.AddUserToDatabase(new User(username, auth.CurrentUser.UserId));
+                Debug.Log("Added to db..");
                 return UpdateUserProfileAsync(newDisplayName: newDisplayName);
             }
         }

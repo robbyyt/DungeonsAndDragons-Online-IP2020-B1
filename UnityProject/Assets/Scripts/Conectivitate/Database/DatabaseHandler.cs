@@ -16,43 +16,23 @@ using UnityEngine.UI;
 // Handler for UI buttons on the scene.  Also performs some
 // necessary setup (initializing the firebase app, etc) on
 // startup.
-   public class DatabaseHandler
+   public sealed class DatabaseHandler
    {
      private DatabaseReference _databaseReference;
      public DatabaseHandler()
      {
-       FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
-       {
-         DependencyStatus dependencyStatus = task.Result;
-         if (dependencyStatus == DependencyStatus.Available)
-         {
-           InitializeFirebase();
-         }
-         else
-         {
-           Debug.LogError(
-             "Could not resolve all Firebase dependencies: " + dependencyStatus);
-         }
-       });
-     }
-
-     // Initialize the Firebase database:
-     protected virtual void InitializeFirebase()
-     {
-       FirebaseApp app = FirebaseApp.DefaultInstance;
-       app.SetEditorDatabaseUrl("https://dungeonsanddragons-ip2020.firebaseio.com/");
+       FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://dungeonsanddragons-ip2020.firebaseio.com/");
        _databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
      }
 
-     public bool addUserToDatabase(User userToAdd)
+     public void AddUserToDatabase(User userToAdd)
      {
-       if(userToAdd==null)
-         throw new NullReferenceException("User este nul.");
-      
-       var userJson = JsonUtility.ToJson(userToAdd);
-       _databaseReference.Child("users").Child(userToAdd.id).SetRawJsonValueAsync(userJson);
-       
-       return true;
+       Debug.Log("ADDING");
+       Debug.Log(_databaseReference.Database);
+        string key = _databaseReference.Child("users").Push().Key;
+        Debug.Log("Cheia este: "+key);
+        var json = JsonUtility.ToJson(userToAdd);
+        _databaseReference.Child("users").Child(key).SetRawJsonValueAsync(json);
      }
    }
  }
