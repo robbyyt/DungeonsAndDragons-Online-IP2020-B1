@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DungeonsAndDragons-Online-IP2020-B1.iml" filepath="$PROJECT_DIR$/DungeonsAndDragons-Online-IP2020-B1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DungeonsAndDragons-Online-IP2020-B1.iml" filepath="$PROJECT_DIR$/.idea/DungeonsAndDragons-Online-IP2020-B1.iml" />
     </modules>
   </component>
 </project>
