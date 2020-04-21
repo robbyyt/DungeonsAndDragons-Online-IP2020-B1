@@ -7,8 +7,8 @@ import com.mongodb.util.JSON;
 import org.bson.types.ObjectId;
 
 public class CharacterDAO {
+    static String collectionName = "Character";
     public static ObjectId createNewCharacter(Character character){
-        String collectionName = "Character";
         Gson gson = new Gson();
         String json = gson.toJson(character);
         DBObject dbObject = (DBObject) JSON.parse(json);
@@ -17,7 +17,6 @@ public class CharacterDAO {
     }
     public static Character findCharacterByIdAndName(ObjectId id, String name){
         Gson gson = new Gson();
-        String collectionName = "Character";
         BasicDBObject query = new BasicDBObject();
         query.put("_id", id);
         query.put("name", name);
