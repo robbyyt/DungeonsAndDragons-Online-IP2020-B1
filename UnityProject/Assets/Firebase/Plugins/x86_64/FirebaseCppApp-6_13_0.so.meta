@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 7fe078a56dbf4eb48ee6a1c1eca19ebd
+guid: cb9778c13236fa24f8bed9ce0fdcbd12
 labels:
 - gvh
-- gvh_version-6.13.0
-- gvhp_exportpath-Firebase/Plugins/x86_64/FirebaseCppApp-6_13_0.so
-- gvhp_exportpath-Firebase\Plugins\x86_64\FirebaseCppApp-6_13_0.so
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -17,58 +14,17 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
-      : Linux
-    second:
-      enabled: 0
-      settings:
-        CPU: None
-  - first:
-      : LinuxUniversal
-    second:
-      enabled: 1
-      settings:
-        CPU: AnyCPU
-  - first:
-      : OSXIntel
-    second:
-      enabled: 0
-      settings:
-        CPU: None
-  - first:
-      : OSXIntel64
-    second:
-      enabled: 0
-      settings:
-        CPU: None
-  - first:
-      : Web
-    second:
-      enabled: 0
-      settings: {}
-  - first:
-      : WebStreamed
-    second:
-      enabled: 0
-      settings: {}
-  - first:
-      Android: Android
-    second:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-  - first:
       Any: 
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       Editor: Editor
     second:
-      enabled: 1
+      enabled: 0
       settings:
-        CPU: AnyCPU
+        CPU: x86_64
         DefaultValueInitialized: true
-        OS: AnyOS
   - first:
       Standalone: Linux64
     second:
@@ -80,7 +36,7 @@ PluginImporter:
     second:
       enabled: 0
       settings:
-        CPU: None
+        CPU: x86_64
   - first:
       Standalone: Win
     second:
@@ -90,22 +46,9 @@ PluginImporter:
   - first:
       Standalone: Win64
     second:
-      enabled: 0
-      settings:
-        CPU: None
-  - first:
-      Windows Store Apps: WindowsStoreApps
-    second:
-      enabled: 0
+      enabled: 1
       settings:
         CPU: AnyCPU
-  - first:
-      iPhone: iOS
-    second:
-      enabled: 0
-      settings:
-        CompileFlags: 
-        FrameworkDependencies: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 

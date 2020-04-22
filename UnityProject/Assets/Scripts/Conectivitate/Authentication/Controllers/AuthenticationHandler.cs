@@ -31,6 +31,7 @@ public class AuthenticationHandler : MonoBehaviour
     protected string LoginEmail = "";
     protected string LoginPassword = "";
     private bool fetchingToken = false;
+    private bool UserSignedIn = false;
     const int kMaxLogSize = 16382;
     Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
 
@@ -91,7 +92,7 @@ public class AuthenticationHandler : MonoBehaviour
         AuthStateChanged(this, null);
     }
 
-    //  Track state changes of the auth object. 
+    //  Track state changes of the auth object.
     void AuthStateChanged(object sender, System.EventArgs eventArgs)
     {
         Firebase.Auth.FirebaseAuth senderAuth = sender as Firebase.Auth.FirebaseAuth;
@@ -103,7 +104,7 @@ public class AuthenticationHandler : MonoBehaviour
             if (!signedIn && user != null)
             {
                 DebugLog("Signed out " + user.UserId);
-                //user is logged out, load login screen 
+                //user is logged out, load login screen
             }
 
             user = senderAuth.CurrentUser;
@@ -172,22 +173,23 @@ public class AuthenticationHandler : MonoBehaviour
             DebugLog("Password does not match");
             return;
         }
+        auth.CreateUserWithEmailAndPasswordAsync("cata.sene12@gmail.com", password)
+            .ContinueWith(task => {
+                return HandleCreateUserAsync(task, newDisplayName: newDisplayName);
+            }).Unwrap();
 
-        auth.CreateUserWithEmailAndPasswordAsync(email, password)
-            .ContinueWith(task => { return HandleCreateUserAsync(task, newDisplayName: newDisplayName); }).Unwrap();
     }
 
-    Task HandleCreateUserAsync(Task<Firebase.Auth.FirebaseUser> authTask, string newDisplayName = null)
-    {
-        if (LogTaskCompletion(authTask, "User Creation"))
-        {
-            if (auth.CurrentUser != null)
-            {
+    Task HandleCreateUserAsync(Task<Firebase.Auth.FirebaseUser> authTask, string newDisplayName = null) {
+        if (LogTaskCompletion(authTask, "User Creation")) {
+            if (auth.CurrentUser != null) {
                 DebugLog(String.Format("User Info: {0}  {1}", auth.CurrentUser.Email,
                     auth.CurrentUser.UserId));
 
                 DatabaseHandler databaseHandler = new DatabaseHandler();
                 databaseHandler.AddUserToDatabase(new User(username, auth.CurrentUser.UserId));
+                Debug.Log("Added to db..");
+                mailVerification(auth.CurrentUser);
                 return UpdateUserProfileAsync(newDisplayName: newDisplayName);
             }
         }
@@ -196,6 +198,23 @@ public class AuthenticationHandler : MonoBehaviour
         return Task.FromResult(0);
     }
 
+    public void mailVerification(Firebase.Auth.FirebaseUser user)
+    {
+        if (user != null) {
+            user.SendEmailVerificationAsync().ContinueWith(task => {
+                if (task.IsCanceled) {
+                    Debug.LogError("canceled.");
+                    return;
+                }
+                if (task.IsFaulted) {
+                    Debug.LogError("encountered an error: " + task.Exception);
+                    return;
+                }
+
+                Debug.Log("Email sent successfully.");
+            });
+        }
+    }
     // Update the user's display name with the currently selected display name.
     public Task UpdateUserProfileAsync(string newDisplayName = null)
     {
@@ -249,9 +268,26 @@ public class AuthenticationHandler : MonoBehaviour
         auth.CurrentUser.TokenAsync(false).ContinueWith(HandleGetUserToken);
     }
 
-
-    void HandleGetUserToken(Task<string> authTask)
+    //functia verifica daca este un user logat in momentul apelarii. (variabila de tipul bool tine evidenta logarii unui user) Daca nu e nimeni logat,
+    //apare in consola mesajul respectiv si se face return. Daca e cinema logat se apeleaza metoda auth.SignOut(), UserSignedIn devine false (nu mai e nimeni logat) si se transfera la scena Login_Register
+    public void SignOut()
     {
+
+        if (UserSignedIn == false)
+        {
+            DebugLog("Can't Sign Out, the user is not Signed In");
+            return;
+        }
+        else
+        {
+            DebugLog("Signing out");
+            auth.SignOut();
+            UserSignedIn = false;
+            SceneManager.LoadSceneAsync("Login_Register");
+        }
+    }
+
+    void HandleGetUserToken(Task<string> authTask) {
         fetchingToken = false;
         if (LogTaskCompletion(authTask, "User token fetch"))
         {
