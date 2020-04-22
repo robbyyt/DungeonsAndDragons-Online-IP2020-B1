@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d7310b4-558f-49de-87b7-2bf2bf8de029" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Icons.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,20 +20,18 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Login.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/NewUserRegister.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AuthResponse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Register.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Login.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Network/NetworkController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Network/NetworkController.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Network/NetworkController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RestClient/Packages/Proyecto26.RestClient/Helpers/HttpBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/NewUserRegister.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AuthResponse.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -52,8 +50,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Login.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" />
       </list>
     </option>
   </component>
@@ -112,7 +110,8 @@
       <workItem from="1586715619932" duration="6764000" />
       <workItem from="1586870958492" duration="6486000" />
       <workItem from="1586883275022" duration="9326000" />
-      <workItem from="1587554262759" duration="1625000" />
+      <workItem from="1587554262759" duration="1871000" />
+      <workItem from="1587556316987" duration="418000" />
     </task>
     <servers />
   </component>
@@ -143,9 +142,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="670" y="200" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586886908707" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1586192674425">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="369" y="110" key="SettingsEditor" timestamp="1587556806918">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="369" y="110" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587556806918" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586192674425" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586283728262">
       <screen x="0" y="0" width="1920" height="1040" />

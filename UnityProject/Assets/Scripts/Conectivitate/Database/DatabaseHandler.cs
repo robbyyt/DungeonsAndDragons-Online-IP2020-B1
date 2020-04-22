@@ -6,12 +6,8 @@ namespace Conectivitate.Database
     using Firebase;
     using Firebase.Database;
     using Firebase.Unity.Editor;
-    using System;
     using System.Collections;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
     using UnityEngine;
-    using UnityEngine.UI;
     
     public sealed class DatabaseHandler
     {
@@ -39,7 +35,7 @@ namespace Conectivitate.Database
             User userRetrieved = new User();
             string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
 
-            _databaseReference.Child("users").GetValueAsync().ContinueWith(task =>
+            _databaseReference.Child("users").GetValueAsync().ContinueWith(task => //accesam baza de date "users" in mod asincron
             {
                 if (task.IsFaulted)
                 {
@@ -48,11 +44,10 @@ namespace Conectivitate.Database
                 else if (task.IsCompleted)
                 {
                     DataSnapshot snapshot = task.Result;
-                    foreach (DataSnapshot user in snapshot.Children)
+                    foreach (DataSnapshot user in snapshot.Children)//parcurgem baza de date (fiecare children din users)
                     {
-                        IDictionary dictUser = (IDictionary) user.Value;
-                        if (!dictUser["id"].ToString().Equals(userId)) continue;
-                        Debug.Log("" + dictUser["id"] + " - " + dictUser["userName"]);
+                        IDictionary dictUser = (IDictionary) user.Value;//se creeaza un dictionar din json-ul luat din baza de date
+                        if (!dictUser["id"].ToString().Equals(userId)) continue;//daca id-ul user-ului este egal cu id-ul cautat, continuam
                         User cUser= new User(dictUser);
                         AppUser.SetUser(cUser);
                         return cUser;

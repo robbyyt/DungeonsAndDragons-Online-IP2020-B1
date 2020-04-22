@@ -177,7 +177,6 @@ public class AuthenticationHandler : MonoBehaviour
             .ContinueWith(task => {
                 return HandleCreateUserAsync(task, newDisplayName: newDisplayName);
             }).Unwrap();
-
     }
 
     Task HandleCreateUserAsync(Task<Firebase.Auth.FirebaseUser> authTask, string newDisplayName = null) {
@@ -245,10 +244,11 @@ public class AuthenticationHandler : MonoBehaviour
         LogTaskCompletion(authTask, "Sign-in");
         DatabaseHandler databaseHandler = new DatabaseHandler();
         User currentUser = databaseHandler.RetrieveUserFromDatabase();
-        Debug.Log("Loading...");
+        Debug.Log("Loading user...");
+        //pentru a astepta ca user-ul sa fie setat, retragerea din baza de date executandu-se in paralel, pe alt thread
         while (AppUser.set==false){
         }
-        Debug.Log("Loaded...");
+        Debug.Log("User loaded...");
         Debug.Log(AppUser.userName);
         Debug.Log(AppUser.id);
         SceneManager.LoadSceneAsync("Start Menu");
