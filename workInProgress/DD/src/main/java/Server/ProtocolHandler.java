@@ -2,24 +2,21 @@ package Server;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import ServerControllers.*;
 
 public class ProtocolHandler {
-    ServerRooms serverRooms;
-    ProtocolHandler(ServerRooms serverRooms )
-    {
-        this.serverRooms =serverRooms;
-    }
     //TAKES THE DATA AND PICKS A PROTOCOL ACCORDINGLY
     //returns a number for each protocol detected
     public int parse(JSONObject object){
         String protocol =  object.get("PROTOCOL").toString();
-        if(protocol.compareTo("CREATE_ROOM")==0){
+        System.out.println(object);
+        if(protocol.compareTo("CREATE_LOBBY")==0){
             return 1;
         }
-        else if(protocol.compareTo("JOIN_ROOM")==0){
+        else if(protocol.compareTo("JOIN_LOBBY")==0){
             return 2;
         }
-        else if(protocol.compareTo("SHOW_ROOMS")==0)
+        else if(protocol.compareTo("SHOW_LOBBIES")==0)
         {
             return 3;
         }
@@ -28,23 +25,18 @@ public class ProtocolHandler {
     public JSONObject response(JSONObject object){
         JSONObject response = new JSONObject();
         int n = parse(object);
-        if(n==1){
-            return createRoom(object);
-        }
-        else if(n==2){
-            return joinRoom(object);
+            if (n == 1) {
+                return new CreateLobby().createLobby(object);
+            } else if (n == 2) {
+                return new JoinLobby().joinLobby(object);
 
-        }else if(n==3)
-        {
-            return showRooms(object);
+            } else if (n == 3) {
+                return new ShowLobbies().showLobbies(object);
+            }
+            return new Unkown().unknown();
         }
-        JSONObject json = new JSONObject();
-        json.put("PROTOCOL","UNKNOWN");
-        json.put("ANSWER","Non existing protocol");
-        json.put("SUCCES",0);
-        return json;
     }
-
+/*
     public JSONObject createRoom(JSONObject object){
         String name = object.get("ROOM_NAME").toString();
         JSONObject json = new JSONObject();
@@ -117,5 +109,4 @@ public class ProtocolHandler {
         json.put("LIST_ROOMS",jsonArray);
         json.put("SUCCESS",1);
         return json ;
-    }
-}
+    }*/

@@ -6,6 +6,7 @@ import org.json.simple.parser.ParseException;
 
 import java.net.*;
 import java .io.*;
+import java.net.InetAddress;
 
 //Here all the players are being connected,
 /*
@@ -23,16 +24,14 @@ public class GameServer {
     private DataInputStream in=null;
     private DataOutputStream out = null;
 
-    ServerRooms serverRooms;
-
     boolean open=true;
     int port;
     public GameServer  (int port){
         //INIT VARIABLES
-        serverRooms = new ServerRooms();
         this.port = port;
         try {
             ss = new ServerSocket(port);
+            System.out.println("Listening on "+ InetAddress.getLocalHost().getHostAddress().trim() + ":" +port);
             Thread serverThread= new Thread(new Runnable() {
                 //  rcv/snd data
                 JSONObject payLoad; // payload
@@ -49,7 +48,7 @@ public class GameServer {
                                     try {
                                         in  = new DataInputStream(s.getInputStream());
                                         out = new DataOutputStream(s.getOutputStream());
-                                        ProtocolHandler protocolHandler = new ProtocolHandler(serverRooms);
+                                        ProtocolHandler protocolHandler = new ProtocolHandler();
                                         while(open) {
                                             //reading byte
                                             //cnt stores the nr of bytes of the incoming data

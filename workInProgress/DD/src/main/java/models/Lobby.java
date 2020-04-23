@@ -1,5 +1,4 @@
 package models;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,4 +48,5 @@ public class Lobby {
     public void setUserList(List<User> userList) {
         this.userList = userList;
     }
+
 }

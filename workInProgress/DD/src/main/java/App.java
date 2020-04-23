@@ -1,3 +1,4 @@
+import DAO.Database;
 import controllers.CharacterController;
 import controllers.LobbyController;
 import controllers.UserController;
@@ -8,11 +9,14 @@ import org.bson.types.ObjectId;
 import Server.GameServer;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class App {
     public static void main(String[] args)
     {
         GameServer server = new GameServer(8000);
+
+
       //testLobby();
 
     }
