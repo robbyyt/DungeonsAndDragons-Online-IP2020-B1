@@ -9,6 +9,9 @@ import models.Lobby;
 import models.User;
 import org.bson.types.ObjectId;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LobbyDAO {
     static String collectionName = "Lobby";
     public static ObjectId create(Lobby lobby){
@@ -35,5 +38,16 @@ public class LobbyDAO {
         DBObject dbObject = Database.findDocument(collectionName,query);
         Lobby lobby= gson.fromJson(dbObject.toString(),Lobby.class);
         return lobby;
+    }
+
+    public static List<Lobby> getAllLobbies(){
+        Gson gson = new Gson();
+        Database.connect();
+        List<DBObject> objects= Database.getAllDocuments(collectionName);
+        List<Lobby> lobbies = new ArrayList<>();
+        for(DBObject obj : objects){
+            lobbies.add(gson.fromJson(obj.toString(),Lobby.class));
+        }
+        return lobbies;
     }
 }

@@ -14,6 +14,9 @@ public class User {
         this.character = character;
         charactersId = new ArrayList<String>();
     }
+    public User(){
+
+    }
     User(String username,List<String>  characters){
         this.username=username;
         this.charactersId.addAll(characters);

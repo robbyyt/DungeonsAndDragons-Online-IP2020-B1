@@ -1,3 +1,4 @@
+import DAO.Database;
 import controllers.CharacterController;
 import controllers.LobbyController;
 import controllers.UserController;
@@ -5,12 +6,19 @@ import models.Character;
 import models.Lobby;
 import models.User;
 import org.bson.types.ObjectId;
+import Server.GameServer;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class App {
-    public static void main(String[] args) {
-      testLobby();
+    public static void main(String[] args)
+    {
+        GameServer server = new GameServer(8000);
+
+
+      //testLobby();
+
     }
      public static void testLobby(){
         Lobby lobby = new Lobby();

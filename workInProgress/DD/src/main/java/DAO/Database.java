@@ -1,7 +1,11 @@
 package DAO;
 
 import com.mongodb.*;
+import models.Lobby;
 import org.bson.types.ObjectId;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Database {
     private static DB database;
@@ -27,5 +31,14 @@ public class Database {
     public static void updateDocument(String collectionName,DBObject query, DBObject document){
         DBCollection collection =  database.getCollection(collectionName);
         collection.update(query,document);
+    }
+    public static List<DBObject> getAllDocuments(String collectionName){
+        List<DBObject> objects = new ArrayList<>();
+        DBCollection collection = database.getCollection(collectionName);
+        DBCursor cursor =collection.find();
+        while(cursor.hasNext()){
+            objects.add(cursor.next());
+        }
+        return objects;
     }
 }
