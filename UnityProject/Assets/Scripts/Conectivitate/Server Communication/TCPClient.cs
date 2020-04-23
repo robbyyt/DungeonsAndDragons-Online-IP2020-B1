@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class TCPClient : MonoBehaviour
 {
-    private TcpClient socketConnection;
+    private static TcpClient socketConnection;
 
-    private Thread clientReceiveThread;
+    private static Thread clientReceiveThread;
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +67,7 @@ public class TCPClient : MonoBehaviour
         }     
     }
 
-    private void SendMessage(string clientMessage)
+    private static void SendMessage(string clientMessage)
     {
         if (socketConnection == null) {             
             return;         
