@@ -20,7 +20,7 @@ public class TCPClient : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {             
-            SendMessage("test");         
+            SendMessage("{\"PROTOCOL\":\"RANDOM\"}");         
         }
     }
 
