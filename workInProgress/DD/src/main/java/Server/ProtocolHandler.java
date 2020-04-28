@@ -7,35 +7,42 @@ import ServerControllers.*;
 public class ProtocolHandler {
     //TAKES THE DATA AND PICKS A PROTOCOL ACCORDINGLY
     //returns a number for each protocol detected
-    public int parse(JSONObject object){
-        String protocol =  object.get("PROTOCOL").toString();
+    public int parse(JSONObject object) {
+        String protocol = object.get("PROTOCOL").toString();
         System.out.println(object);
-        if(protocol.compareTo("CREATE_LOBBY")==0){
+        if (protocol.compareTo("CREATE_LOBBY") == 0) {
             return 1;
-        }
-        else if(protocol.compareTo("JOIN_LOBBY")==0){
+        } else if (protocol.compareTo("JOIN_LOBBY") == 0) {
             return 2;
-        }
-        else if(protocol.compareTo("SHOW_LOBBIES")==0)
-        {
+        } else if (protocol.compareTo("SHOW_LOBBIES") == 0) {
             return 3;
+        } else if (protocol.compareTo("SET_DM") == 0) {
+            return 4;
+        } else if (protocol.compareTo("START_GAME") == 0) {
+            return 5;
         }
         return 0;
     }
-    public JSONObject response(JSONObject object){
+
+    public JSONObject response(JSONObject object) {
         JSONObject response = new JSONObject();
         int n = parse(object);
-            if (n == 1) {
-                return new CreateLobby().createLobby(object);
-            } else if (n == 2) {
-                return new JoinLobby().joinLobby(object);
+        if (n == 1) {
+            return new CreateLobby().createLobby(object);
+        } else if (n == 2) {
+            return new JoinLobby().joinLobby(object);
 
-            } else if (n == 3) {
-                return new ShowLobbies().showLobbies(object);
-            }
-            return new Unkown().unknown();
+        } else if (n == 3) {
+            return new ShowLobbies().showLobbies(object);
+        } else if (n == 4) {
+            return new setDM().setDM(object);
         }
+        else if(n==5){
+            ;
+        }
+        return new Unkown().unknown();
     }
+}
 /*
     public JSONObject createRoom(JSONObject object){
         String name = object.get("ROOM_NAME").toString();

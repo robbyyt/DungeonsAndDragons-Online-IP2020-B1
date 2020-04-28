@@ -16,7 +16,6 @@ public class App {
     {
         GameServer server = new GameServer(8000);
 
-
       //testLobby();
 
     }
