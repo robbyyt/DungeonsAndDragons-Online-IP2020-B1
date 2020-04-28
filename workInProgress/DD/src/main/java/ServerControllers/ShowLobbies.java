@@ -25,7 +25,7 @@ public class ShowLobbies {
                 }
                 array.add(out);
             }
-
+                json.put("PROTOCOL","SHOW_LOBBIES");
                 json.put("LIST_LOBBIES",array);
                 json.put("SUCCES",1);
                 json.put("NR_LOBBIES",lobbies.size());

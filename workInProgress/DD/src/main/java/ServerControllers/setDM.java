@@ -1,5 +1,6 @@
 package ServerControllers;
 
+import Server.LobbyHandler;
 import com.google.gson.Gson;
 import controllers.LobbyController;
 import models.Lobby;
@@ -14,7 +15,13 @@ public class setDM {
         String playerName = object.get("PLAYER_NAME").toString();
         String roomId = object.get("ROOM_ID").toString();
         ObjectId id = new ObjectId(roomId);
-        Lobby lobby = LobbyController.findById(id);
+        Lobby lobby = null;
+        try {
+            lobby = LobbyController.findById(id);
+        }
+        catch (Exception e ){
+            return  noKnownLobby();
+        }
         lobby.setDungeonMaster(playerName);
         boolean found=false;
         for (User ur : lobby.getUserList()) {
@@ -45,6 +52,13 @@ public class setDM {
         jsonObject.put("PROTOCOL", "SET_DM");
         jsonObject.put("SUCCESS", 0);
         jsonObject.put("ANSWER", "Invalid Dungeon Master");
+        return jsonObject;
+    }
+    JSONObject noKnownLobby(){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("PROTOCOL", "SET_DM");
+        jsonObject.put("SUCCESS", 0);
+        jsonObject.put("ANSWER", "No valid lobby id");
         return jsonObject;
     }
 }

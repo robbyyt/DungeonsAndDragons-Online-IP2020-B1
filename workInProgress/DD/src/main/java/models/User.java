@@ -8,6 +8,8 @@ import java.util.List;
 public class User {
     String username;
     Character character;
+    String characterName;
+
     List<String> charactersId;
     User(String username, Character character){
         this.username=username;
@@ -29,6 +31,14 @@ public class User {
     public void setCharactersId(List<String> charactersId) {
         if (this.charactersId == null)this.charactersId= new ArrayList<String>();
         this.charactersId.addAll(charactersId);
+    }
+
+    public void setCharacterName(String characterName) {
+        this.characterName = characterName;
+    }
+
+    public String getCharacterName() {
+        return characterName;
     }
 
     public void setCharacterId(String id){

@@ -32,4 +32,5 @@ public class CharacterController {
     public static Character findCharacterByIdAndName(ObjectId id, String name){
         return CharacterDAO.findCharacterByIdAndName(id,name);
     }
+
 }

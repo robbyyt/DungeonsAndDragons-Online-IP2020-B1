@@ -7,6 +7,7 @@ public class Lobby {
     String id;
     String dungeonMaster;
     int maxPlayersLimit;
+    int nrPlayers = 0;
     List<User> userList= new ArrayList<User>();
 
     public String getName() {
@@ -49,4 +50,11 @@ public class Lobby {
         this.userList = userList;
     }
 
+    public void setNrPlayers(int nrPlayers) {
+        this.nrPlayers = nrPlayers;
+    }
+
+    public int getNrPlayers() {
+        return nrPlayers;
+    }
 }

@@ -1,5 +1,6 @@
 
 package  Server;
+import ServerControllers.NoJsonFormat;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -35,6 +36,7 @@ public class GameServer {
             Thread serverThread= new Thread(new Runnable() {
                 //  rcv/snd data
                 JSONObject payLoad; // payload
+                ProtocolHandler protocolHandler = new ProtocolHandler();
                 byte [] data = new byte[1024];// payload
                 @Override
                 public void run() {
@@ -48,14 +50,13 @@ public class GameServer {
                                     try {
                                         in  = new DataInputStream(s.getInputStream());
                                         out = new DataOutputStream(s.getOutputStream());
-                                        ProtocolHandler protocolHandler = new ProtocolHandler();
                                         while(open) {
                                             //reading byte
                                             //cnt stores the nr of bytes of the incoming data
                                             int cnt = in.read(data);
-                                            //each charactes has a byte representation
+                                                                                        //each charactes has a byte representation
                                             //so the strData must be a string equal to the cnt value, no more ,no less
-                                            //cuz the Json parsing does excetions otherwise cuz he starts reading nonsense
+                                            //cuz the Json parsing does exceptions otherwise starts reading nonsense
                                             byte[] actualData = new byte[cnt];
                                             for(int i =0;i<cnt;i++){
                                                 actualData[i] = data[i];
@@ -65,9 +66,12 @@ public class GameServer {
                                             try {
                                                 payLoad = (JSONObject) new  JSONParser().parse(strData);
                                             } catch (ParseException e) {
+
+                                                byte [] toSend = new NoJsonFormat().noJson(null).toString().getBytes();
+                                                out.write(toSend);
                                                 e.printStackTrace();
                                             }
-                                            payLoad  = protocolHandler.response(payLoad);
+                                            payLoad  = protocolHandler.response(payLoad,s);
                                             byte [] toSend = payLoad.toString().getBytes();
                                             out.write(toSend);
                                         }
