@@ -173,7 +173,7 @@ public class AuthenticationHandler : MonoBehaviour
             DebugLog("Password does not match");
             return;
         }
-        auth.CreateUserWithEmailAndPasswordAsync("cata.sene12@gmail.com", password)
+        auth.CreateUserWithEmailAndPasswordAsync(email, password)
             .ContinueWith(task => {
                 return HandleCreateUserAsync(task, newDisplayName: newDisplayName);
             }).Unwrap();
