@@ -425,13 +425,37 @@
                 <e p="User.cs" t="Include" />
               </e>
             </e>
+            <e p="Chat" t="Include">
+              <e p="Chat.cs" t="Include" />
+            </e>
             <e p="Database" t="Include">
               <e p="DatabaseHandler.cs" t="Include" />
+            </e>
+            <e p="Lobby" t="Include">
+              <e p="LobbyController.cs" t="Include" />
+              <e p="RoomButton.cs" t="Include" />
+              <e p="RoomController.cs" t="Include" />
             </e>
             <e p="Network" t="Include">
               <e p="NetworkController.cs" t="Include" />
             </e>
             <e p="Server Communication" t="Include">
+              <e p="Models" t="Include">
+                <e p="Create Lobby" t="Include">
+                  <e p="CreateLobbyRequest.cs" t="Include" />
+                  <e p="CreateLobbyResponse.cs" t="Include" />
+                </e>
+                <e p="Join Lobby" t="Include">
+                  <e p="JoinLobbyRequest.cs" t="Include" />
+                  <e p="JoinLobbyResponse.cs" t="Include" />
+                </e>
+                <e p="Select Character" t="Include">
+                  <e p="SelectCharacterRequest.cs" t="Include" />
+                  <e p="SelectCharacterResponse.cs" t="Include" />
+                </e>
+                <e p="ServerRequest.cs" t="Include" />
+                <e p="ServerResponse.cs" t="Include" />
+              </e>
               <e p="TCPClient.cs" t="Include" />
             </e>
           </e>
