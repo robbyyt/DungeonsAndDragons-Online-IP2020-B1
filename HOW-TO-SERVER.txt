@@ -1,0 +1,91 @@
+creati obiect json , asta ar fi forma lui, ignor ghilimele
+Am exemplu de client in java la mine pe git 
+aveti functii exemplu pentru fiecare cum ar trebuie apelate in Client.java
+Unele responsuri apar diferite de cum se apeleaza findca asa sunt redate 
+din parsarea clasei respective
+Ca sa incercam sa fim cat mai similari, 
+incercati sa folositi o librarie asemanatoare
+https://www.tutorialspoint.com/json/json_java_example.htm
+clasele noastre ar trebui sa coincida ( vedeti ce este in models)
+varianta JSON obiect pentru C# care sper sa fie ceva :
+https://docs.microsoft.com/en-us/dotnet/api/org.json.jsonobject?view=xamarin-android-sdk-9
+ 
+REPO : https://github.com/kreL-Lo/DungeonsAndDwagansTesting
+1)CREATE LOBBY
+CALL
+###
+	PROTOCOL : CREATE_LOBBY
+	PLAYER_NAME : some_name
+	ROOM_NAME : some_name
+	MAX_PLAYERS : some_nr
+	
+###RESPONSE 
+	PROTOCOL : CREATE_LOBBY
+	ANSWER : BAD CALLING/ Room Created Successfully
+	SUCCESS : 0/1 
+	userList : [] - lista cu Useri din lobby ()
+	name: - numele care l-ati dat mai sus
+	dungeonMaster : - cine ii dungeon master( e cel ce apeleaza metoda createLobby la inceput)
+	id : object id-ul loby-ului
+	maxPlayersLimit : limita setata
+	
+	eg raspuns : {"userList":[],"SUCCESS":"1","ANSWER":"Room Created Successfully","name":"broh","PROTOCOL":"CREATE_LOBBY","id":"5ea8867c2a50cf30546b9d64","maxPlayersLimit":100,"dungeonMaster":"someName"}
+
+2)JOIN LOBBY
+###CALL
+	PROTOCOL: JOIN_LOBBY
+	PLAYER_NAME : some_name
+	ROOM_ID : id_room
+	
+###RESPONSE
+	PROTOCOL: JOIN_LOBBY
+	ANSWER : ALREADY IN LOBBY / NO ROOM WITH THIS ID  / BAD CALLING / TOO_MANY_PLAYERS
+	SUCCES: 0/1
+	userList : - lista de Useri ca la CREATE_LOBBY
+	eg raspuns : 
+	{"userList":[{"username":"asdfasdfasdf"}],"SUCCESS":"1","ANSWER":"Room Created Successfully","name":"broh","PROTOCOL":"JOIN_LOBBY","id":"5ea8867c2a50cf30546b9d64","maxPlayersLimit":100,"dungeonMaster":"someName"}
+
+3)SHOW LOBBIES
+###CALLL
+	PROTOCOL : SHOW_LOBBIES
+	
+###RESPONSE 
+	PROTOCOL : SHOW_LOBBIES
+	ANSWER : BAD_CALLING (cazul cand succes = 0)
+	SUCCESS : 0/1
+	NR_LOBBIES : - nr de lobiuri
+	LIST_LOBBIES : -listeaza toate lobby-urile ( vezi clasa LOBBY de la models)
+	
+	eg raspuns : 
+	{"LIST_LOBBIES":[{"userList":[],"name":"broh","id":"5ea883112a50cf442492d2bc","maxPlayersLimit":100,"dungeonMaster":"someName"},{"userList":[],"name":"broh","id":"5ea883402a50cf4120058d29","maxPlayersLimit":100,"dungeonMaster":"someName"},{"userList":[],"name":"broh","id":"5ea8844c2a50cf2a7428a6d5","maxPlayersLimit":100,"dungeonMaster":"someName"},{"userList":[{"username":"asdfasdfasdf"}],"name":"broh","id":"5ea885b02a50cf4bc8121ee4","maxPlayersLimit":100,"dungeonMaster":"someName"},{"userList":[{"username":"asdfasdfasdf"}],"name":"broh","id":"5ea8867c2a50cf30546b9d64","maxPlayersLimit":100,"dungeonMaster":"someName"}],"PROTOCOL":"SHOW_LOBBIES","NR_LOBBIES":5,"SUCCES":1}
+
+4)SELECT CHARACTER
+###CALL
+	PROTOCOL : SET_CHARACTER
+	PLAYER_NAME : SOME_NAME 
+	CHARACTER_NAME : Barbarian /Cleric /Fighter /Paladin / Warlock  unu din astia 5
+###RESPONSE
+	PROTOCOL : SET_CHARACTER
+	ANSWER : NO KNOWN CLASS / CLASS HAS BEEN SET
+	SUCCESS : 0/1
+	
+	eg raspuns : 
+5)SELECT_DM -seteaza dungeonMaster, 
+###CALL
+	PROTOCOL : SET_DM 
+	ROOM_ID : ROOM-ID
+###RESPONSE
+	PROTOCOL: SET_DM 
+	ANSWER:No valid lobby id / Invalid Dungeon Master/ Dungeon Master Set Successfully
+6)START_GAME 
+###CALL 
+	PROTOCOL : START_GAME 
+	PLAYER_NAME : PLAYER_NAME
+###RESPONSE
+	PROTOCOL : START_GAME 	
+	SUCCES : 0/1
+	ANSWER: GAME STARTED/ NO SET DUNGEON MASTER /NO VALID DUNGEON MASTER /NOT ALL USERS HAVE SET THEIR CLASS
+	
+
+
+
