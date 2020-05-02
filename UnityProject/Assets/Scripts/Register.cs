@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Text.RegularExpressions;
-using Conectivitate.Authentication.Models;
 using UnityEngine.UI;
 
 public class Register : MonoBehaviour
@@ -12,11 +11,35 @@ public class Register : MonoBehaviour
     public GameObject email;
     public GameObject password;
     public GameObject confPassword;
+    private string Username;
+    private string Email;
+    private string Password;
+    private string ConfPassword;
+    private string form;
+    private bool EmailValid=false;
     // Start is called before the first frame update
     void Start()
     {
         
     }
+
+    public void RegisterButton(){
+        /*bool UN=false;
+        bool EM=false;
+        bool PW=false;
+        bool CPW=false;
+        if(Username!=""){
+            if(System.IO.File.Exists(@"C:/Users/Tudor/Dungeons&Dragons/"+Username+".txt")){
+                Debug.LogWarning("Username Taken!");
+        }
+        else{
+           UN=true;
+        }
+        }
+        else Debug.LogWarning("Username field is empty!");*/
+        print("Registration Successful!");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -31,5 +54,14 @@ public class Register : MonoBehaviour
                 confPassword.GetComponent<InputField>().Select();
             }
         }
+        if (Input.GetKeyDown(KeyCode.Return)){
+            if(Username!=""&&Email!=""&&Password!=""&&ConfPassword!=""){
+                RegisterButton();
+            }
+        }
+        Username=username.GetComponent<InputField>().text;
+        Email=email.GetComponent<InputField>().text;
+        Password=password.GetComponent<InputField>().text;
+        ConfPassword=confPassword.GetComponent<InputField>().text;
     }
 }

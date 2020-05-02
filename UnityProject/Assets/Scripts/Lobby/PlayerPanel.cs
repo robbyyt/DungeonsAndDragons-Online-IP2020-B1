@@ -10,21 +10,22 @@ public class PlayerPanel : MonoBehaviour
     public Text PlayerName;
     public Text PlayerRole;
     public Text MuteText;
-    public LobbyPlayer lobbyPlayer { get; private set; }
+    public LobbyPlayer LobbyPlayer { get; private set; }
+    public LobbyPlayersManager manager;
 
     public void SetPlayer(LobbyPlayer player, int number)
     {
-        lobbyPlayer = player;
+        LobbyPlayer = player;
         PlayerNumber.text = number.ToString();
         PlayerLevel.text = "Level: " + player.level;
         PlayerName.text = player.name;
-        PlayerRole.text = player.role;
+        PlayerRole.text = player.role.ToString();
         UpdateMuteText();
     }
 
     public void MuteButton()
     {
-        if(lobbyPlayer.muted)
+        if(LobbyPlayer.muted)
         {
             UnmutePlayer();
         } else {
@@ -35,19 +36,19 @@ public class PlayerPanel : MonoBehaviour
 
     private void MutePlayer()
     {
-        lobbyPlayer.MutePlayer();
+        LobbyPlayer.MutePlayer();
         UpdateMuteText();
     }
 
     private void UnmutePlayer()
     {
-        lobbyPlayer.UnmutePlayer();
+        LobbyPlayer.UnmutePlayer();
         UpdateMuteText();
     }
 
     private void UpdateMuteText()
     {
-        MuteText.text = lobbyPlayer.muted ? "Unmute" : "Mute";
+        MuteText.text = LobbyPlayer.muted ? "Unmute" : "Mute";
     }
     
     public void UpdateNumber(int newNumber)
@@ -57,6 +58,6 @@ public class PlayerPanel : MonoBehaviour
 
     public void Kick()
     {
-        LobbyPlayersManager.KickPlayer(lobbyPlayer.id);
+        manager.KickPlayer(LobbyPlayer.id);
     }
 }
