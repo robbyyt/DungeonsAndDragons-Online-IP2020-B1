@@ -22,8 +22,6 @@ public class GameServer {
     private Socket socket= null;
     private ServerSocket ss = null;
 
-    private DataInputStream in=null;
-    private DataOutputStream out = null;
 
     boolean open=true;
     int port;
@@ -48,13 +46,13 @@ public class GameServer {
                                 @Override
                                 public void run() {
                                     try {
-                                        in  = new DataInputStream(s.getInputStream());
-                                        out = new DataOutputStream(s.getOutputStream());
+                                        DataInputStream in  = new DataInputStream(s.getInputStream());
+                                        DataOutputStream out = new DataOutputStream(s.getOutputStream());
                                         while(open) {
                                             //reading byte
                                             //cnt stores the nr of bytes of the incoming data
                                             int cnt = in.read(data);
-                                                                                        //each charactes has a byte representation
+                                            //each charactes has a byte representation
                                             //so the strData must be a string equal to the cnt value, no more ,no less
                                             //cuz the Json parsing does exceptions otherwise starts reading nonsense
                                             byte[] actualData = new byte[cnt];
