@@ -1,7 +1,7 @@
 ﻿using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class RoomButton : MonoBehaviour
 {
 
@@ -20,5 +20,6 @@ public class RoomButton : MonoBehaviour
     public void JoinRoomOnclick()
     {
         PhotonNetwork.JoinRoom(roomName);
+        SceneManager.LoadScene("LobbyScene");
     }
 }

@@ -2,11 +2,14 @@
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class CustomLobby : MonoBehaviourPunCallbacks, ILobbyCallbacks  
 {
     public static CustomLobby lobby;
+    public GameObject createRoomButton;
     public string roomName;
     public int roomSize;
     public GameObject roomListingPrefab;
@@ -15,18 +18,22 @@ public class CustomLobby : MonoBehaviourPunCallbacks, ILobbyCallbacks
     private void Awake()
     {
         lobby = this;
+        PhotonNetwork.ConnectUsingSettings();
     }
 
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to materServer");
         PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.JoinLobby();
+        createRoomButton.GetComponent<Button>().interactable = true;
     }
 
     public void CreateRoom()
     {
-        RoomOptions roomOptions = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = (byte)roomSize };
+        RoomOptions roomOptions = new RoomOptions() { IsVisible = true, IsOpen = true, PublishUserId = true, MaxPlayers = (byte)roomSize };
         PhotonNetwork.CreateRoom(roomName, roomOptions);
+        SceneManager.LoadScene("LobbyScene");
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
@@ -69,6 +76,11 @@ public class CustomLobby : MonoBehaviourPunCallbacks, ILobbyCallbacks
     public void OnRoomSizeChanged(string sizeIn)
     {
         roomSize = int.Parse(sizeIn);
+    }
+
+    public void OnNicknameChanged(string nicknameIn)
+    {
+        PhotonNetwork.LocalPlayer.NickName = nicknameIn;
     }
 
     public void JoinLobbyOnClick()

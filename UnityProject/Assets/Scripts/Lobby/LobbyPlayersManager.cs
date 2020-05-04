@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections;
+using Photon.Pun;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Realtime;
 
-public class LobbyPlayersManager : MonoBehaviour
+public class LobbyPlayersManager : MonoBehaviourPunCallbacks
 {
     private List<GameObject> playerPanels;
     private int playersNumber;
@@ -18,7 +19,24 @@ public class LobbyPlayersManager : MonoBehaviour
     {
         playerPanels = new List<GameObject>();
         playersNumber = 1;
-        Enumerable.Repeat(1, 5).ToList().ForEach(x => AddMockPlayer());
+        PhotonNetwork.PlayerList.ToList().ForEach(x =>
+        {
+            LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(x.UserId), 0, x.NickName, Role.MAGE);
+            AddPlayerToLobby(lobbyPlayer);
+        });
+        lobbyManager.UpdateAdminRights();
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, newPlayer.NickName, Role.MAGE);
+        AddPlayerToLobby(lobbyPlayer);
+        lobbyManager.UpdateAdminRights();
+    }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        KickPlayer(Guid.Parse(otherPlayer.UserId));
     }
 
     public void AddPlayerToLobby(LobbyPlayer player)
@@ -29,11 +47,6 @@ public class LobbyPlayersManager : MonoBehaviour
         playersNumber += 1;
         playerPanels.Add(pane);
         lobbyManager.UpdatePlayerReccomandationRoles();
-    }
-
-    public void AddMockPlayer()
-    {
-        AddPlayerToLobby(new LobbyPlayer(Guid.NewGuid(), 13, "Mock Player " + playersNumber, Role.WARRIOR));     
     }
 
     public void KickPlayer(Guid id)
