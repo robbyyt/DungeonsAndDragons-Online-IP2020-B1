@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Conectivitate.Authentication.Models;
 using Conectivitate.Database;
+using Firebase.Auth;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -17,12 +18,13 @@ public class AuthenticationHandler : MonoBehaviour
         new Dictionary<string, Firebase.Auth.FirebaseUser>();
 
     private string logText = "";
-    public Text emailText;
+    public InputField emailText;
     public InputField passwordText;
     public InputField passwordVerificationText;
     public Text usernameText;
     public Text LoginEmailText;
     public InputField LoginPasswordText;
+    public InputField passwordResetInputField;
     protected string username;
     protected string email = "";
     protected string password = "";
@@ -293,5 +295,21 @@ public class AuthenticationHandler : MonoBehaviour
         {
             DebugLog("Token = " + authTask.Result);
         }
+    }
+
+    public void SendResetPasswordEmail()
+    {
+        string email = passwordResetInputField.text;
+        auth.SendPasswordResetEmailAsync(email).ContinueWith(task =>
+        {
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                Debug.Log("Email is not recognized!");
+            }
+            else
+            {
+                Debug.Log("Email sent succsefuly!");
+            }
+        });
     }
 }

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d7310b4-558f-49de-87b7-2bf2bf8de029" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-    </list>
+    <list default="true" id="8d7310b4-558f-49de-87b7-2bf2bf8de029" name="Default Changelist" comment="Reset password + am rezolvat bug-ul in care nu lua tot email-ul, ci doar textul care era vizibil" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,31 +11,23 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/ServerRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Login.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Register.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/MessagesManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Network/NetworkController.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Network/NetworkController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RestClient/Packages/Proyecto26.RestClient/Helpers/HttpBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayersManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/NewUserRegister.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/NewUserRegister.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RestClient/DemoScene/Scripts/MainScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AuthResponse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Network/NetworkController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Join Lobby/JoinLobbyRequest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/RestClient/Packages/Proyecto26.RestClient/Helpers/HttpBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Register.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Join Lobby/JoinLobbyResponse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Login.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/MessagesManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayersManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/TCPClient.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Lobby/LobbyController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Select Character/SelectCharacterRequest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Create Lobby/CreateLobbyRequest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Select Character/SelectCharacterResponse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/ServerResponse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Create Lobby/CreateLobbyResponse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Network/NetworkController.cs.meta" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -59,7 +47,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/TCPClient.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Create Lobby/ServerResponse.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/ServerResponse.cs" />
@@ -70,6 +57,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Join Lobby/JoinLobbyRequest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Select Character/SelectCharacterResponse.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Select Character/SelectCharacterRequest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" />
       </list>
     </option>
   </component>
@@ -134,7 +122,16 @@
       <workItem from="1587658250363" duration="132000" />
       <workItem from="1588008443048" duration="2176000" />
       <workItem from="1588107009234" duration="966000" />
+      <workItem from="1588621960724" duration="3018000" />
     </task>
+    <task id="LOCAL-00001" summary="Reset password + am rezolvat bug-ul in care nu lua tot email-ul, ci doar textul care era vizibil">
+      <created>1588624973335</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588624973335</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +151,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Reset password + am rezolvat bug-ul in care nu lua tot email-ul, ci doar textul care era vizibil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reset password + am rezolvat bug-ul in care nu lua tot email-ul, ci doar textul care era vizibil" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Notifications" timestamp="1586187439023">
