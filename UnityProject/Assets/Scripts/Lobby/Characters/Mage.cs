@@ -20,4 +20,9 @@ public class Mage : Character
     {
         return "Mage";
     }
+
+    public override Role GetRole()
+    {
+        return Role.MAGE;
+    }
 }

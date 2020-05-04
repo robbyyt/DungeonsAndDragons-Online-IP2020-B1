@@ -20,5 +20,10 @@ public class Archer : Character
     {
         return "Archer";
     }
- 
+
+    public override Role GetRole()
+    {
+        return Role.ARCHER;
+    }
+
 }

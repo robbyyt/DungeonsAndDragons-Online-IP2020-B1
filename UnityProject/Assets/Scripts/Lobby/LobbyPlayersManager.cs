@@ -18,18 +18,25 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
     public void Start()
     {
         playerPanels = new List<GameObject>();
-        playersNumber = 1;
+        playersNumber = 1;  
+    }
+
+    public override void OnJoinedRoom()
+    {
         PhotonNetwork.PlayerList.ToList().ForEach(x =>
         {
-            LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(x.UserId), 0, x.NickName, Role.MAGE);
-            AddPlayerToLobby(lobbyPlayer);
+            if(!x.IsLocal)
+            {
+                LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(x.UserId), 0, x.NickName, Role.UNKNOWN);
+                AddPlayerToLobby(lobbyPlayer);
+            }            
         });
         lobbyManager.UpdateAdminRights();
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, newPlayer.NickName, Role.MAGE);
+        LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, newPlayer.NickName, Role.UNKNOWN);
         AddPlayerToLobby(lobbyPlayer);
         lobbyManager.UpdateAdminRights();
     }
@@ -39,7 +46,7 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
         KickPlayer(Guid.Parse(otherPlayer.UserId));
     }
 
-    public void AddPlayerToLobby(LobbyPlayer player)
+    public PlayerPanel AddPlayerToLobby(LobbyPlayer player)
     {
         GameObject pane = Instantiate(playerPanePrefab, Vector3.zero, Quaternion.identity, playersScrollArea.transform);
         pane.GetComponent<PlayerPanel>().SetPlayer(player, playersNumber);
@@ -47,7 +54,9 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
         playersNumber += 1;
         playerPanels.Add(pane);
         lobbyManager.UpdatePlayerReccomandationRoles();
+        return pane.GetComponent<PlayerPanel>();
     }
+  
 
     public void KickPlayer(Guid id)
     {
@@ -60,6 +69,7 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
 
     public List<LobbyPlayer> GetPlayers()
     {
+        playerPanels.ForEach(x => Debug.Log(x.GetComponent<PlayerPanel>().PlayerRole));
         return playerPanels
             .Select(x => x.GetComponent<PlayerPanel>().LobbyPlayer)
             .ToList();
@@ -83,5 +93,9 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
     public void ShowMuteButton()
     {
         playerPanels.ForEach(panel => panel.transform.GetChild(panel.transform.childCount - 2).GetComponent<Button>().interactable = true);
+    }
+    public List<PlayerPanel> GetPlayerPanels()
+    {
+        return playerPanels.Select(x => x.GetComponent<PlayerPanel>()).ToList();
     }
 }

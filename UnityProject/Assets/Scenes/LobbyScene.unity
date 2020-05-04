@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bfa0a5e1d8e70f4ab84f2b34dcd0235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Role: 0
+  Role: 3
   CurrentNumberOfPlayersText: {fileID: 1696171064}
   MaxNumberOfPlayersText: {fileID: 1186259108}
   RoleNameText: {fileID: 707913795}
@@ -852,7 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bfa0a5e1d8e70f4ab84f2b34dcd0235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Role: 0
+  Role: 4
   CurrentNumberOfPlayersText: {fileID: 1216649743}
   MaxNumberOfPlayersText: {fileID: 1697693342}
   RoleNameText: {fileID: 246868250}
@@ -1836,6 +1836,7 @@ MonoBehaviour:
   Inteligence: {fileID: 1449875216}
   Wisdom: {fileID: 1640372808}
   Charisma: {fileID: 1624991068}
+  currentPlayer: {fileID: 2070306644}
 --- !u!1 &264301104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,7 +2477,6 @@ RectTransform:
   - {fileID: 1075320737}
   - {fileID: 1662373625}
   - {fileID: 257556042}
-  - {fileID: 1689868985}
   - {fileID: 736155937}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -4417,7 +4417,7 @@ RectTransform:
   - {fileID: 1516606990}
   - {fileID: 709704252}
   m_Father: {fileID: 360417814}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6464,7 +6464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bfa0a5e1d8e70f4ab84f2b34dcd0235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Role: 0
+  Role: 2
   CurrentNumberOfPlayersText: {fileID: 1957547342}
   MaxNumberOfPlayersText: {fileID: 77991828}
   RoleNameText: {fileID: 1185570017}
@@ -9926,12 +9926,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 360417814}
-  m_RootOrder: 7
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 990, y: 512}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1689868986
@@ -10461,7 +10461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bfa0a5e1d8e70f4ab84f2b34dcd0235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Role: 0
+  Role: 1
   CurrentNumberOfPlayersText: {fileID: 1353487766}
   MaxNumberOfPlayersText: {fileID: 1468334457}
   RoleNameText: {fileID: 1981965338}
@@ -12623,9 +12623,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2070306643}
   - component: {fileID: 2070306644}
+  - component: {fileID: 2070306645}
+  - component: {fileID: 2070306646}
   m_Layer: 0
   m_Name: CurrentPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12642,7 +12644,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2070306644
 MonoBehaviour:
@@ -12656,7 +12658,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7aa0884890180478e7837158ba38fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAdmin: 0
+  IsAdmin: 0
+  NickName: 
+  PlayerRole: 0
+  PlayerLevel: 0
+  manager: {fileID: 1689868986}
+  panel: {fileID: 0}
+--- !u!114 &2070306645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070306642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &2070306646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070306642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e41de88277df049b46ce7bef3aa0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lobbyPlayersManager: {fileID: 1261253041}
 --- !u!1 &2076485890
 GameObject:
   m_ObjectHideFlags: 0
