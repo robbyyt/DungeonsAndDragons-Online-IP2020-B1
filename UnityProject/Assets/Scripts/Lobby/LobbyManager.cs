@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 
-public class LobbyManager : MonoBehaviour
+public class LobbyManager : MonoBehaviourPunCallbacks
 {
     private List<RoleRecommendation> roleRecommendationList;
     public LobbyPlayersManager lobbyPlayersManager;
@@ -22,9 +21,23 @@ public class LobbyManager : MonoBehaviour
     {
         roleRecommendationList = RecommandedRolesPanel.transform
                                     .GetComponentsInChildren<RoleRecommendation>()
-                                    .ToList();
+                                    .ToList();       
     }
-
+    private void Start()
+    {
+        UpdateAdminRights();
+    }
+    public void UpdateAdminRights()
+    {
+        if (PhotonNetwork.LocalPlayer.IsMasterClient == true)
+        {
+            ShowAdminRights();
+        }
+        else
+        {
+            DisableAdminRights();
+        }
+    }
     public void UpdatePlayerReccomandationRoles()
     {
         roleRecommendationList.ForEach(x =>
@@ -62,4 +75,10 @@ public class LobbyManager : MonoBehaviour
         lobbyPlayersManager.ShowKickButton();
         lobbyPlayersManager.ShowMuteButton();
     }
+
+    private void Update()
+    {
+        UpdateAdminRights();
+    }
 }
+
