@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d7310b4-558f-49de-87b7-2bf2bf8de029" name="Default Changelist" comment="Reset password + am rezolvat bug-ul in care nu lua tot email-ul, ci doar textul care era vizibil" />
+    <list default="true" id="8d7310b4-558f-49de-87b7-2bf2bf8de029" name="Default Changelist" comment="Reset password + am rezolvat bug-ul in care nu lua tot email-ul, ci doar textul care era vizibil">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettingsFile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettingsFile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreateLobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreateLobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayersManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/Photon/CustomLobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/Photon/CustomLobby.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,23 +26,34 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Login.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Characters/Managers/CharacterViewManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Characters/Managers/CharacterPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Register.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/MessagesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Network/NetworkController.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Network/NetworkController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Photon/LobbyRpc.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RestClient/Packages/Proyecto26.RestClient/Helpers/HttpBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Photon/CustomLobby.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/CurrentPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayersManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/NewUserRegister.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RestClient/DemoScene/Scripts/MainScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AuthResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyMenuButtons.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/getNameScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -57,7 +83,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Join Lobby/JoinLobbyRequest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Select Character/SelectCharacterResponse.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Select Character/SelectCharacterRequest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/CurrentPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Photon/CustomLobby.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayersManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/getNameScript.cs" />
       </list>
     </option>
   </component>
@@ -123,6 +153,8 @@
       <workItem from="1588008443048" duration="2176000" />
       <workItem from="1588107009234" duration="966000" />
       <workItem from="1588621960724" duration="3018000" />
+      <workItem from="1588689964180" duration="9021000" />
+      <workItem from="1588700633957" duration="4893000" />
     </task>
     <task id="LOCAL-00001" summary="Reset password + am rezolvat bug-ul in care nu lua tot email-ul, ci doar textul care era vizibil">
       <created>1588624973335</created>

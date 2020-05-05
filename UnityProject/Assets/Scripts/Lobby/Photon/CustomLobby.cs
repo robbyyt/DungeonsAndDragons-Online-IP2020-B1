@@ -14,6 +14,7 @@ public class CustomLobby : MonoBehaviourPunCallbacks, ILobbyCallbacks
     public int roomSize;
     public GameObject roomListingPrefab;
     public Transform roomsPanel;
+    public Text playerName;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class CustomLobby : MonoBehaviourPunCallbacks, ILobbyCallbacks
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.JoinLobby();
         createRoomButton.GetComponent<Button>().interactable = true;
+        playerName.text = PhotonNetwork.LocalPlayer.NickName;
     }
 
     public void CreateRoom()

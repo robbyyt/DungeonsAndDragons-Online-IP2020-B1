@@ -2,6 +2,7 @@
 using Photon.Pun;
 using System.Collections.Generic;
 using System.Linq;
+using Conectivitate.Authentication.Models;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Realtime;
@@ -36,7 +37,7 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, newPlayer.NickName, Role.UNKNOWN);
+        LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, AppUser.userName, Role.UNKNOWN);
         AddPlayerToLobby(lobbyPlayer);
         lobbyManager.UpdateAdminRights();
     }

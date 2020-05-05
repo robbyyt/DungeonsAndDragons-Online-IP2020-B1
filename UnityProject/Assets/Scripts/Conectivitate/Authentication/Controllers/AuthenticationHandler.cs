@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Conectivitate.Authentication.Models;
 using Conectivitate.Database;
 using Firebase.Auth;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Photon.Realtime;
 
 public class AuthenticationHandler : MonoBehaviour
 {
@@ -21,10 +23,11 @@ public class AuthenticationHandler : MonoBehaviour
     public InputField emailText;
     public InputField passwordText;
     public InputField passwordVerificationText;
-    public Text usernameText;
-    public Text LoginEmailText;
+    public InputField usernameText;
+    public InputField LoginEmailText;
     public InputField LoginPasswordText;
     public InputField passwordResetInputField;
+    public Scene lobbyScene;
     protected string username;
     protected string email = "";
     protected string password = "";
@@ -53,23 +56,13 @@ public class AuthenticationHandler : MonoBehaviour
                     "Could not resolve all Firebase dependencies: " + dependencyStatus);
             }
         });
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        username = usernameText.text;
-        email = emailText.text;
-        password = passwordText.text;
-        confirmPassword = passwordVerificationText.text;
-        LoginEmail = LoginEmailText.text;
-        LoginPassword = LoginPasswordText.text;
+        DontDestroyOnLoad(this);
     }
 
     void OnDestroy()
     {
-        auth.StateChanged -= AuthStateChanged;
-        auth.IdTokenChanged -= IdTokenChanged;
+        //auth.StateChanged -= AuthStateChanged;
+        //auth.IdTokenChanged -= IdTokenChanged;
         auth = null;
     }
 
@@ -239,6 +232,7 @@ public class AuthenticationHandler : MonoBehaviour
         DebugLog(String.Format("Attempting to sign in as {0}...", email));
         auth.SignInWithEmailAndPasswordAsync(LoginEmail, LoginPassword)
             .ContinueWith(HandleSigninResult);
+        LoadLobbyScene();
     }
 
     void HandleSigninResult(Task<Firebase.Auth.FirebaseUser> authTask)
@@ -253,7 +247,6 @@ public class AuthenticationHandler : MonoBehaviour
         Debug.Log("User loaded...");
         Debug.Log(AppUser.userName);
         Debug.Log(AppUser.id);
-        SceneManager.LoadSceneAsync("Start Menu");
     }
 
 
@@ -311,5 +304,12 @@ public class AuthenticationHandler : MonoBehaviour
                 Debug.Log("Email sent succsefuly!");
             }
         });
+    }
+
+    public void LoadLobbyScene()
+    {   
+        DebugLog("Loading scene..");
+        SceneManager.LoadScene("CreateLobby");
+        Debug.Log("Scene loaded..");
     }
 }

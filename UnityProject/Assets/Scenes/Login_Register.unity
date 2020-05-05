@@ -952,7 +952,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Username
+  m_Text: 'Email
+
+'
 --- !u!222 &847445986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1470,49 +1472,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1255315964
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1255315966}
-  - component: {fileID: 1255315965}
-  m_Layer: 0
-  m_Name: NetworkController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1255315965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255315964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586ac3efc3e12064baa079eae22d2fbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1255315966
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255315964}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1271587931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,13 +1501,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15319d4ce2f9124bb4e8d532a464638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emailText: {fileID: 1766452878}
+  emailText: {fileID: 1855430980}
   passwordText: {fileID: 1993879217}
   passwordVerificationText: {fileID: 1647657178}
-  usernameText: {fileID: 466008942}
-  LoginEmailText: {fileID: 1663688835}
+  usernameText: {fileID: 1741857366}
+  LoginEmailText: {fileID: 551116927}
   LoginPasswordText: {fileID: 1992950594}
-  emailInputField: {fileID: 0}
+  passwordResetInputField: {fileID: 1272922674}
+  lobbyScene:
+    m_Handle: 0
 --- !u!4 &1271587933
 Transform:
   m_ObjectHideFlags: 0
@@ -3638,5 +3599,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

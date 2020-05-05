@@ -28,6 +28,7 @@
             </e>
           </e>
         </e>
+        <e p="getNameScript.cs" t="Include" />
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
             <e p="Code" t="Include">
@@ -431,11 +432,6 @@
             <e p="Database" t="Include">
               <e p="DatabaseHandler.cs" t="Include" />
             </e>
-            <e p="Lobby" t="Include">
-              <e p="LobbyController.cs" t="Include" />
-              <e p="RoomButton.cs" t="Include" />
-              <e p="RoomController.cs" t="Include" />
-            </e>
             <e p="Network" t="Include">
               <e p="NetworkController.cs" t="Include" />
             </e>
@@ -478,10 +474,16 @@
               <e p="Rogue.cs" t="Include" />
               <e p="Warrior.cs" t="Include" />
             </e>
+            <e p="CurrentPlayer.cs" t="Include" />
             <e p="LobbyManager.cs" t="Include" />
             <e p="LobbyMenuButtons.cs" t="Include" />
             <e p="LobbyPlayer.cs" t="Include" />
             <e p="LobbyPlayersManager.cs" t="Include" />
+            <e p="Photon" t="Include">
+              <e p="CustomLobby.cs" t="Include" />
+              <e p="LobbyRpc.cs" t="Include" />
+              <e p="RoomButton.cs" t="Include" />
+            </e>
             <e p="PlayerPanel.cs" t="Include" />
             <e p="RoleRecommendation.cs" t="Include" />
           </e>
