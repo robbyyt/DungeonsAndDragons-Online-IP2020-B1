@@ -20,4 +20,9 @@ public class Rogue : Character
     {
         return "Rogue";
     }
+
+    public override Role GetRole()
+    {
+        return Role.ROGUE;
+    }
 }

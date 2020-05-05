@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Collections;
+using Photon.Pun;
 using System.Collections.Generic;
 using System.Linq;
+using Conectivitate.Authentication.Models;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Realtime;
 
-public class LobbyPlayersManager : MonoBehaviour
+public class LobbyPlayersManager : MonoBehaviourPunCallbacks
 {
     private List<GameObject> playerPanels;
     private int playersNumber;
@@ -17,11 +19,35 @@ public class LobbyPlayersManager : MonoBehaviour
     public void Start()
     {
         playerPanels = new List<GameObject>();
-        playersNumber = 1;
-        Enumerable.Repeat(1, 5).ToList().ForEach(x => AddMockPlayer());
+        playersNumber = 1;  
     }
 
-    public void AddPlayerToLobby(LobbyPlayer player)
+    public override void OnJoinedRoom()
+    {
+        PhotonNetwork.PlayerList.ToList().ForEach(x =>
+        {
+            if(!x.IsLocal)
+            {
+                LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(x.UserId), 0, x.NickName, Role.UNKNOWN);
+                AddPlayerToLobby(lobbyPlayer);
+            }            
+        });
+        lobbyManager.UpdateAdminRights();
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, AppUser.userName, Role.UNKNOWN);
+        AddPlayerToLobby(lobbyPlayer);
+        lobbyManager.UpdateAdminRights();
+    }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        KickPlayer(Guid.Parse(otherPlayer.UserId));
+    }
+
+    public PlayerPanel AddPlayerToLobby(LobbyPlayer player)
     {
         GameObject pane = Instantiate(playerPanePrefab, Vector3.zero, Quaternion.identity, playersScrollArea.transform);
         pane.GetComponent<PlayerPanel>().SetPlayer(player, playersNumber);
@@ -29,12 +55,9 @@ public class LobbyPlayersManager : MonoBehaviour
         playersNumber += 1;
         playerPanels.Add(pane);
         lobbyManager.UpdatePlayerReccomandationRoles();
+        return pane.GetComponent<PlayerPanel>();
     }
-
-    public void AddMockPlayer()
-    {
-        AddPlayerToLobby(new LobbyPlayer(Guid.NewGuid(), 13, "Mock Player " + playersNumber, Role.WARRIOR));     
-    }
+  
 
     public void KickPlayer(Guid id)
     {
@@ -47,6 +70,7 @@ public class LobbyPlayersManager : MonoBehaviour
 
     public List<LobbyPlayer> GetPlayers()
     {
+        playerPanels.ForEach(x => Debug.Log(x.GetComponent<PlayerPanel>().PlayerRole));
         return playerPanels
             .Select(x => x.GetComponent<PlayerPanel>().LobbyPlayer)
             .ToList();
@@ -70,5 +94,9 @@ public class LobbyPlayersManager : MonoBehaviour
     public void ShowMuteButton()
     {
         playerPanels.ForEach(panel => panel.transform.GetChild(panel.transform.childCount - 2).GetComponent<Button>().interactable = true);
+    }
+    public List<PlayerPanel> GetPlayerPanels()
+    {
+        return playerPanels.Select(x => x.GetComponent<PlayerPanel>()).ToList();
     }
 }

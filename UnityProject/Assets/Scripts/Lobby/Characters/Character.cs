@@ -12,5 +12,6 @@ public abstract class Character
     public int Inteligence { get; protected set; }
     public int Wisdom { get; protected set; }
     public int Charisma { get; protected set; }
+    public abstract Role GetRole();
     public abstract string GetClassName();
 }

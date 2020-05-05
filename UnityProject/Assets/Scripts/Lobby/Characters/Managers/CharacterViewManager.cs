@@ -14,7 +14,7 @@ public class CharacterViewManager : MonoBehaviour
     public Text Inteligence;
     public Text Wisdom;
     public Text Charisma;
-
+    public CurrentPlayer currentPlayer;
     public void SetCharacterFromPanel(CharacterPanel characterPanelSource)
     {
         Character character = characterPanelSource.Character;
@@ -29,5 +29,7 @@ public class CharacterViewManager : MonoBehaviour
         Charisma.text = character.Charisma.ToString();
         Debug.Log("sadA");
         gameObject.SetActive(true);
+        currentPlayer.UpdateRole(character.GetRole());
     }
+    
 }
