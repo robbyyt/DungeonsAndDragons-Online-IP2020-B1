@@ -27,4 +27,9 @@ public class LobbyPlayer
         this.muted = false;
     }
 
+    public void UpdateRole(Role role)
+    {
+        this.role = role;
+    }
+
 }

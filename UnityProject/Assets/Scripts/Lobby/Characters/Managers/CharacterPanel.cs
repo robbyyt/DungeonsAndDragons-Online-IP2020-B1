@@ -17,7 +17,7 @@ public class CharacterPanel : MonoBehaviour
         this.Character = character;
         CharacterName.text = Character.Name;
         CharacterLevel.text = "Level: " + Character.Level;
-        CharacterRole.text = character.GetClassName();
+        CharacterRole.text = character.GetClassName();      
         switch (character.GetClassName())
         {
             case "Warrior":

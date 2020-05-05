@@ -56,6 +56,12 @@ public class PlayerPanel : MonoBehaviour
         PlayerNumber.text = newNumber.ToString();
     }
 
+    public void UpdateRole(Role role)
+    {
+        this.LobbyPlayer.UpdateRole(role);
+        PlayerRole.text = role.ToString();
+    }
+
     public void Kick()
     {
         manager.KickPlayer(LobbyPlayer.id);

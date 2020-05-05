@@ -20,4 +20,9 @@ public class Cleric : Character
     {
         return "Cleric";
     }
+
+    public override Role GetRole()
+    {
+        return Role.CLERIC;
+    }
 }

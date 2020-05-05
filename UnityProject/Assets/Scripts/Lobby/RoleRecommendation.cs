@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public enum Role
 {
-    MAGE, WARRIOR, CLERIC, ROGUE, ARCHER
+    MAGE, WARRIOR, CLERIC, ROGUE, ARCHER, UNKNOWN
 }
 
 public class RoleRecommendation : MonoBehaviour
