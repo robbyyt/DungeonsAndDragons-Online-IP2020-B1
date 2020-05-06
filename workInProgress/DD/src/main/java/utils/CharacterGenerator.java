@@ -86,7 +86,6 @@ public class CharacterGenerator {
                 "explorer's pack: backpack, bedroll, mess kit, 10 torches, 10 days of rations, waterskin, 50 ft of hempen rope";
         String personalityTraits = "I quote sacred texts and proverbs in almost every situation.\n" +
                 "I've enjoyed fine food, drink, and high society among my temple’s elite. Rough living grates on me.\n" ;
-
         String ideals = "I seek to prove myself worthy of my god’s favor by matching my actions against his or her teachings.\n";
         String bonds = "I seek to preserve a sacred text that my enemies consider heretical and seek to destroy.";
         String flaws = "I put too much trust in those who wield power within my temple’s hierarchy.";

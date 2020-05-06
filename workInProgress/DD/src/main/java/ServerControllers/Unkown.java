@@ -3,7 +3,7 @@ package ServerControllers;
 import org.json.simple.JSONObject;
 
 public class Unkown {
-    public JSONObject unknown(){
+    public static JSONObject unknown(){
         JSONObject json = new JSONObject();
         json.put("PROTOCOL","UNKNOWN");
         json.put("ANSWER","Non existing protocol");

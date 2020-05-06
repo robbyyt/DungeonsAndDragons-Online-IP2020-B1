@@ -12,7 +12,6 @@ public class CharacterDAO {
         Gson gson = new Gson();
         String json = gson.toJson(character);
         DBObject dbObject = (DBObject) JSON.parse(json);
-        Database.connect();
         return Database.createDocument(collectionName,dbObject);
     }
     public static Character findCharacterByIdAndName(ObjectId id, String name){
@@ -20,7 +19,6 @@ public class CharacterDAO {
         BasicDBObject query = new BasicDBObject();
         query.put("_id", id);
         query.put("name", name);
-        Database.connect();
         DBObject character = Database.findDocument(collectionName,query);
         Character character1= gson.fromJson(character.toString(),Character.class);
         return character1;

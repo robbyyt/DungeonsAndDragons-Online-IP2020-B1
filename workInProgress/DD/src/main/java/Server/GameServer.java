@@ -1,5 +1,6 @@
 
 package  Server;
+import DAO.Database;
 import ServerControllers.NoJsonFormat;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -34,14 +35,16 @@ public class GameServer {
             Thread serverThread= new Thread(new Runnable() {
                 //  rcv/snd data
                 JSONObject payLoad; // payload
-                ProtocolHandler protocolHandler = new ProtocolHandler();
                 byte [] data = new byte[1024];// payload
                 @Override
                 public void run() {
+                    Database.connect();
+                    System.out.println("Connected to Database");
                     while(open){
                         try {
                             Socket s= ss.accept();
                             System.out.println("Accepted a client");
+
                             Thread clientThread = new Thread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -65,11 +68,11 @@ public class GameServer {
                                                 payLoad = (JSONObject) new  JSONParser().parse(strData);
                                             } catch (ParseException e) {
 
-                                                byte [] toSend = new NoJsonFormat().noJson(null).toString().getBytes();
+                                                byte [] toSend = NoJsonFormat.noJson(null).toString().getBytes();
                                                 out.write(toSend);
                                                 e.printStackTrace();
                                             }
-                                            payLoad  = protocolHandler.response(payLoad,s);
+                                            payLoad  = ProtocolHandler.response(payLoad,s);
                                             byte [] toSend = payLoad.toString().getBytes();
                                             out.write(toSend);
                                         }
