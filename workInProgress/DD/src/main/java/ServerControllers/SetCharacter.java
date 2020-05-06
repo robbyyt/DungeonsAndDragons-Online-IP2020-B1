@@ -7,8 +7,8 @@ import models.User;
 import org.json.simple.JSONObject;
 
 public class SetCharacter {
-    public JSONObject setCharacter(JsonObject object){
-        String playerName = object.get("PLAYER_NAME").toString();
+    public static JSONObject setCharacter(JSONObject object){
+        String playerName = object.get("PLAYER_ID").toString();
         String character = object.get("CHARACTER_NAME").toString();
 
         if(parseCharacter(character)==-1){
@@ -32,7 +32,9 @@ public class SetCharacter {
     }
 
 
-    int parseCharacter(String character){
+
+
+    static int parseCharacter(String character){
         if(character.compareTo("Barabarian")==0){
             return 1;
         }
@@ -56,15 +58,14 @@ public class SetCharacter {
     }
 
 
-    public JSONObject unkownClass(){
+    public static JSONObject unkownClass(){
         JSONObject json = new JSONObject();
         json.put("PROTOCOL","SET_CHARACTER");
-
         json.put("SUCCES",0);
-        json.put("ANSWER","NO KNOWN CLASS");
+        json.put("ANSWER","NO KNOWN CHARACTER");
         return json;
     }
-    JSONObject unknowPlayer(){
+    static JSONObject unknowPlayer(){
         JSONObject json = new JSONObject();
         json.put("PROTOCOL","SET_CHARACTER");
 

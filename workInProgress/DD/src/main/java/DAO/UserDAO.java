@@ -18,7 +18,6 @@ public class UserDAO {
         document.put("username",username);
         List<String> array = new ArrayList<String>();
         document.put("charactersId",array);
-        Database.connect();
          return Database.createDocument(collectionName,document);
     }
     public static User findUser(String username){

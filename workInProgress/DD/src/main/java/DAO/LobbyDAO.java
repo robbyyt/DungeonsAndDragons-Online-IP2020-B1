@@ -18,7 +18,6 @@ public class LobbyDAO {
         Gson gson = new Gson();
         String json = gson.toJson(lobby);
         DBObject dbObject = (DBObject) JSON.parse(json);
-        Database.connect();
         return Database.createDocument(collectionName,dbObject);
     }
     public static void update(Lobby lobby){
@@ -27,14 +26,12 @@ public class LobbyDAO {
         DBObject dbObject = (DBObject) JSON.parse(json);
         BasicDBObject query = new BasicDBObject();
         query.put("_id", new ObjectId(lobby.getId()));
-        Database.connect();
         Database.updateDocument(collectionName,query,dbObject);
     }
     public static Lobby findById(ObjectId id){
         Gson gson = new Gson();
         BasicDBObject query = new BasicDBObject();
         query.put("_id", id);
-        Database.connect();
         DBObject dbObject = Database.findDocument(collectionName,query);
         Lobby lobby= gson.fromJson(dbObject.toString(),Lobby.class);
         return lobby;
@@ -42,7 +39,6 @@ public class LobbyDAO {
 
     public static List<Lobby> getAllLobbies(){
         Gson gson = new Gson();
-        Database.connect();
         List<DBObject> objects= Database.getAllDocuments(collectionName);
         List<Lobby> lobbies = new ArrayList<>();
         for(DBObject obj : objects){
