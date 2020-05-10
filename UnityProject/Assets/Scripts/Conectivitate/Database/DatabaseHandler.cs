@@ -1,5 +1,6 @@
 ﻿using Conectivitate.Authentication.Models;
 using Firebase.Auth;
+using Firebase.Extensions;
 
 namespace Conectivitate.Database
 {
@@ -30,12 +31,12 @@ namespace Conectivitate.Database
             _databaseReference.Child("users").Child(userId).SetRawJsonValueAsync(json);
         }
 
-        public User RetrieveUserFromDatabase()
+        public bool RetrieveUserFromDatabase()
         {
             User userRetrieved = new User();
             string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
 
-            _databaseReference.Child("users").GetValueAsync().ContinueWith(task => //accesam baza de date "users" in mod asincron
+            _databaseReference.Child("users").GetValueAsync().ContinueWithOnMainThread(task => //accesam baza de date "users" in mod asincron
             {
                 if (task.IsFaulted)
                 {
@@ -43,21 +44,19 @@ namespace Conectivitate.Database
                 }
                 else if (task.IsCompleted)
                 {
+                    Debug.Log("DEBUG");
                     DataSnapshot snapshot = task.Result;
                     foreach (DataSnapshot user in snapshot.Children)//parcurgem baza de date (fiecare children din users)
                     {
                         IDictionary dictUser = (IDictionary) user.Value;//se creeaza un dictionar din json-ul luat din baza de date
                         if (!dictUser["id"].ToString().Equals(userId)) continue;//daca id-ul user-ului este egal cu id-ul cautat, continuam
-                        User cUser= new User(dictUser);
-                        AppUser.SetUser(cUser);
-                        return cUser;
+                        Debug.Log("Created user in other thread!!!!");
+                        return true;
                     }
                 }
-
-                return null;
+                return false;
             });
-
-            return userRetrieved;
+            return false;
         }
     }
 }

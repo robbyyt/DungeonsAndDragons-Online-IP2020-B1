@@ -2,34 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d7310b4-558f-49de-87b7-2bf2bf8de029" name="Default Changelist" comment="Reset password + am rezolvat bug-ul in care nu lua tot email-ul, ci doar textul care era vizibil">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/CurrentPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/CurrentPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayersManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/getNameScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/getNameScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Login.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Characters/Managers/NewCharacterManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Characters/Managers/CharacterViewManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Create Lobby/CreateLobbyResponse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Characters/Managers/CharactersManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Create Lobby/CreateLobbyRequest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Characters/Managers/CharacterPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Register.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestScripts/Tests/Tests.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PlayFabSDK/Client/PlayFabClientInstanceAPI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Photon/RoomButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Join Lobby/JoinLobbyRequest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/MessagesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Network/NetworkController.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Network/NetworkController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Photon/LobbyRpc.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/PlayFabLogin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PlayFabSDK/Client/PlayFabClientAPI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RestClient/Packages/Proyecto26.RestClient/Helpers/HttpBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Photon/CustomLobby.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/PlayerPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/CurrentPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayersManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/NewUserRegister.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/RoleRecommendation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RestClient/DemoScene/Scripts/MainScript.cs" root0="FORCE_HIGHLIGHTING" />
@@ -38,9 +78,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyMenuButtons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/getNameScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestScripts/Tests/AuthTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Login_Register.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -57,9 +99,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/DatabaseCommunication.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Register.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Login.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/TCPClient.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Create Lobby/ServerResponse.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/ServerResponse.cs" />
@@ -70,11 +109,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Join Lobby/JoinLobbyRequest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Select Character/SelectCharacterResponse.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Server Communication/models/Select Character/SelectCharacterRequest.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/CurrentPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Photon/CustomLobby.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayersManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/User.cs" />
+        <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationController2.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/AppUser.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/AuthenticationHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/CurrentPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/getNameScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/PlayFabLogin.cs" />
       </list>
     </option>
   </component>
@@ -142,6 +188,12 @@
       <workItem from="1588621960724" duration="3018000" />
       <workItem from="1588689964180" duration="9021000" />
       <workItem from="1588700633957" duration="5273000" />
+      <workItem from="1588755816258" duration="462000" />
+      <workItem from="1588881382607" duration="5142000" />
+      <workItem from="1588920324859" duration="4088000" />
+      <workItem from="1588962943534" duration="1292000" />
+      <workItem from="1588966308624" duration="9106000" />
+      <workItem from="1589097906024" duration="4808000" />
     </task>
     <task id="LOCAL-00001" summary="Reset password + am rezolvat bug-ul in care nu lua tot email-ul, ci doar textul care era vizibil">
       <created>1588624973335</created>
@@ -180,6 +232,70 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1586187439023" />
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1588924418810">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588924418810" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.3.bottom" timestamp="1588924418812">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588924418812" />
+    <state width="1493" height="261" key="GridCell.Tab.3.center" timestamp="1588924418812">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1588924418812" />
+    <state width="1493" height="261" key="GridCell.Tab.3.left" timestamp="1588924418811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1588924418811" />
+    <state width="1493" height="261" key="GridCell.Tab.3.right" timestamp="1588924418812">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1588924418812" />
     <state x="670" y="200" key="RiderGenerateDialog" timestamp="1586886908707">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -189,9 +305,10 @@
     </state>
     <state x="369" y="110" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587556806918" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586192674425" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588107204606">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1588921303027">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588921303027" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588107204606" />
   </component>
 </project>

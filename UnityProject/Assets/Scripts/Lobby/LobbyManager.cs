@@ -42,9 +42,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         roleRecommendationList.ForEach(x =>
                 x.UpdateCurrentNumberOfPlayers(
-                    lobbyPlayersManager.GetPlayers()
-                                        .Where(player => player.role == x.Role)
-                                        .Count()));
+                    lobbyPlayersManager
+                        .GetPlayers()
+                        .Count(player => player.role == x.Role)));
     }
 
     public void ShowScenarioDescription()

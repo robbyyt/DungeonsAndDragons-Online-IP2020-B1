@@ -37,7 +37,7 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, AppUser.userName, Role.UNKNOWN);
+        LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, newPlayer.NickName, Role.UNKNOWN);
         AddPlayerToLobby(lobbyPlayer);
         lobbyManager.UpdateAdminRights();
     }

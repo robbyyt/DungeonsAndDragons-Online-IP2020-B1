@@ -203,8 +203,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1271587932}
-        m_MethodName: CreateUserAsync
+      - m_Target: {fileID: 1714708404}
+        m_MethodName: Register
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -681,7 +681,7 @@ GameObject:
   - component: {fileID: 551116928}
   - component: {fileID: 551116927}
   m_Layer: 5
-  m_Name: Login_Username
+  m_Name: Login_Email
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 20
+  m_CharacterLimit: 35
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -1121,7 +1121,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1050957299}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1714708404}
+        m_MethodName: ResetPassword
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1050957299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1501,15 +1512,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15319d4ce2f9124bb4e8d532a464638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emailText: {fileID: 1855430980}
-  passwordText: {fileID: 1993879217}
-  passwordVerificationText: {fileID: 1647657178}
-  usernameText: {fileID: 1741857366}
-  LoginEmailText: {fileID: 551116927}
-  LoginPasswordText: {fileID: 1992950594}
+  emailField: {fileID: 1855430980}
+  passwordField: {fileID: 1993879217}
+  passwordVerificationField: {fileID: 1647657178}
+  usernameField: {fileID: 1741857366}
+  loginEmailField: {fileID: 551116927}
+  loginPasswordField: {fileID: 1992950594}
   passwordResetInputField: {fileID: 1272922674}
-  lobbyScene:
-    m_Handle: 0
 --- !u!4 &1271587933
 Transform:
   m_ObjectHideFlags: 0
@@ -2075,8 +2084,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1271587932}
-        m_MethodName: SigninAsync
+      - m_Target: {fileID: 1714708404}
+        m_MethodName: Login
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2635,6 +2644,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683901940}
   m_CullTransparentMesh: 0
+--- !u!1 &1714708402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1714708403}
+  - component: {fileID: 1714708404}
+  m_Layer: 0
+  m_Name: PlayFabController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1714708403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714708402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 729, y: 419, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714708404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714708402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e8c6dd9a1f13f46bf24267d2fc65c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emailField: {fileID: 1855430980}
+  passwordField: {fileID: 1993879217}
+  passwordVerificationField: {fileID: 1647657178}
+  usernameField: {fileID: 1741857366}
+  loginEmailField: {fileID: 551116927}
+  loginPasswordField: {fileID: 1992950594}
+  passwordRecoveryEmailField: {fileID: 1272922674}
 --- !u!1 &1741857364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,6 +2947,49 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1828421272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1828421274}
+  - component: {fileID: 1828421273}
+  m_Layer: 0
+  m_Name: GlobalUser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1828421273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828421272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fee37ce15bf0ce43b84a69d31cce83c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1828421274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828421272}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 400, y: 239.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1855430978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2977,7 +3079,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 5
-  m_CharacterLimit: 20
+  m_CharacterLimit: 35
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
