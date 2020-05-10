@@ -9,7 +9,6 @@ public class User {
     String username;
     Character character;
     String characterName;
-
     List<String> charactersId;
     User(String username, Character character){
         this.username=username;

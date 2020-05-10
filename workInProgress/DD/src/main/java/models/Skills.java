@@ -15,7 +15,7 @@ public class Skills {
     int perception;
     int performance;
     int persuasion;
-    int religion;
+    int religion;//NO
     int sleightOfHand;
     int stealth;
     int survival;

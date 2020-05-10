@@ -1,12 +1,10 @@
 package Server;
 
-import org.json.simple.JSONArray;
+import ServerControllers.gameProtocols.dice.AttackRoll;
 import org.json.simple.JSONObject;
 import ServerControllers.*;
 
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ProtocolHandler {
     //TAKES THE DATA AND PICKS A PROTOCOL ACCORDINGLY
@@ -26,8 +24,10 @@ public class ProtocolHandler {
             return 4;
         } else if (protocol.compareTo("START_GAME") == 0) {
             return 5;
-        }else if(protocol.compareTo("SET_CHARACTER")==0){
+        }else if(protocol.compareTo("SET_CHARACTER")==0) {
             return 6;
+        }else if(protocol.compareTo("ACTION_DICE")==0){
+            return 7;
         }
         return 0;
     }
@@ -49,7 +49,9 @@ public class ProtocolHandler {
         }
         else if(n==6){
             return SetCharacter.setCharacter(object);
+        }else if(n==7){
+            return AttackRoll.rollDice(object);
         }
-        return FailureResponse.unknown();
+            return FailureResponse.unknown();
     }
 }
