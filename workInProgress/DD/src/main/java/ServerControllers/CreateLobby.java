@@ -8,15 +8,15 @@ import org.json.simple.JSONObject;
 public class CreateLobby {
 
     static public JSONObject createLobby(JSONObject object) {
-        String id;
+        String name;
         try {
-            id = object.get("ROOM_ID").toString();
+            name = object.get("ROOM_NAME").toString();
         }
         catch (Exception e) {
             return exceptionHandler();
         }
         Lobby lobby = new Lobby();
-        lobby.setName(id);
+        lobby.setName(name);
         ObjectId id_o = LobbyController.create(lobby);
         lobby.setId(id_o.toString());
         LobbyController.update(lobby);
