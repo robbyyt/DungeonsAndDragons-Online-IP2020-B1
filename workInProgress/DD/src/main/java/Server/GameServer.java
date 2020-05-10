@@ -1,7 +1,7 @@
 
 package  Server;
 import DAO.Database;
-import ServerControllers.NoJsonFormat;
+import ServerControllers.FailureResponse;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -64,11 +64,12 @@ public class GameServer {
                                             }
                                             //converting to string
                                             String strData = new String(actualData, "UTF-8");
+                                            System.out.println(strData);
                                             try {
                                                 payLoad = (JSONObject) new  JSONParser().parse(strData);
                                             } catch (ParseException e) {
 
-                                                byte [] toSend = NoJsonFormat.noJson(null).toString().getBytes();
+                                                byte [] toSend = FailureResponse.unknown().toString().getBytes();
                                                 out.write(toSend);
                                                 e.printStackTrace();
                                             }
@@ -86,13 +87,10 @@ public class GameServer {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
                     }
                 }
             })  ;
             serverThread.start();
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }

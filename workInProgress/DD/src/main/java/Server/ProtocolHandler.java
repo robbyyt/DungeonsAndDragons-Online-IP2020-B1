@@ -11,7 +11,9 @@ import java.util.List;
 public class ProtocolHandler {
     //TAKES THE DATA AND PICKS A PROTOCOL ACCORDINGLY
     //returns a number for each protocol detected
+
     public static int parse(JSONObject object) {
+        //DEFINESTI PROTOCOALE
         String protocol = object.get("PROTOCOL").toString();
         System.out.println(object);
         if (protocol.compareTo("CREATE_LOBBY") == 0) {
@@ -48,6 +50,6 @@ public class ProtocolHandler {
         else if(n==6){
             return SetCharacter.setCharacter(object);
         }
-        return Unkown.unknown();
+        return FailureResponse.unknown();
     }
 }

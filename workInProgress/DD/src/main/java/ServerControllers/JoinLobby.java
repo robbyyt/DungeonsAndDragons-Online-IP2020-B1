@@ -15,15 +15,15 @@ import java.util.List;
 public class JoinLobby {
     public static JSONObject joinLobby(JSONObject object) {
 
-        String roomId, playerName;
+        String roomName, playerName;
         try {
-            roomId = object.get("ROOM_ID").toString();
+            roomName = object.get("ROOM_NAME").toString();
             playerName = object.get("PLAYER_ID").toString();
         } catch (Exception e) {
             return exceptionHandler();
         }
         User user = new User();
-        ObjectId id = new ObjectId(roomId);
+        ObjectId id = new ObjectId(roomName);
         Lobby lobby = LobbyController.findById(id);
         user.setUsername(playerName);
         UserController.createUser(playerName);
