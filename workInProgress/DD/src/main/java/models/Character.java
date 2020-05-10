@@ -8,16 +8,22 @@ public class Character {
     String race;
     int level=1;
     int experiencePoints;
+    //ability check... modifiers
+
     int strength;
     int dexteriry;
-    int constitution;
+
     int intelligence;
     int wisdom;
     int charisma;
+
+    ///////////
+    int constitution;
     int profienceBonus;
     int armourClass;
     int intiative;
     int speed;
+
     int hitPointMaximum;
     List<AttackAndSpell> attacksAndSpellCast;
     SavingThrows savingThrows;

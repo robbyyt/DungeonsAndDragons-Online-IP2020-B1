@@ -64,7 +64,6 @@ public class GameServer {
                                             }
                                             //converting to string
                                             String strData = new String(actualData, "UTF-8");
-                                            System.out.println(strData);
                                             try {
                                                 payLoad = (JSONObject) new  JSONParser().parse(strData);
                                             } catch (ParseException e) {
@@ -74,6 +73,7 @@ public class GameServer {
                                                 e.printStackTrace();
                                             }
                                             payLoad  = ProtocolHandler.response(payLoad,s);
+                                                System.out.println(payLoad);
                                             byte [] toSend = payLoad.toString().getBytes();
                                             out.write(toSend);
                                         }

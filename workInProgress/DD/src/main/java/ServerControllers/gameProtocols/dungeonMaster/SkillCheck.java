@@ -1,4 +1,5 @@
 package ServerControllers.gameProtocols.dungeonMaster;
 
-public class CheckRoll {
+public class SkillCheck {
+
 }
