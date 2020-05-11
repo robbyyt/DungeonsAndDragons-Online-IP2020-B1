@@ -33,6 +33,10 @@ public class CharacterController {
         return CharacterDAO.findCharacterByIdAndName(id,name);
     }
 
+    public static Character findCharacterByName(String name){
+        return CharacterDAO.findCharacterByName(name);
+    }
+
 }
 /*
 MOBI

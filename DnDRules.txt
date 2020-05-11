@@ -1,0 +1,68 @@
+Ability Score: daca caracterul este capabil sa realizeze o actiune 
+How to:
+ability score -> modifier 
+ability check = d20 + modifier
+ability check compareTo DificultyClasses (DC)
+
+Strength -- AttackRoll + Damage pt Close Combat
+> Athletics
+Dexterity --  AttackRoll and your damage roll when attacking with a ranged weapon, such as a sling or a longbow or finesse property, such as a dagger or a rapier
+> Acrobatics
+> Sleight of Hand
+> Stealth
+Intelligence -- Wizards use Intelligence as their spellcasting ability
+> Arcana
+> History
+> Investigation
+> Nature
+> Religion
+Wisdom -- Clerics, druids, and rangers use Wisdom as their spellcasting ability, which helps determine the saving throw DCs of spells they cast.
+> Anim al Handling
+> Insight
+> M edicine
+> Perception
+> Survival
+Charisma --Bards, paladins, sorcerers, and w arlocks use Charisma as their spellcasting ability, which helps determine the saving throw DCs of spells they cast.
+> Deception
+> Intimidation
+> Perform ance
+> Persuasion
+
+Constitution - hit points
+---------------------------------------------------------------
+
+Saving Throw: A saving throw—also called a save—represents an attempt to resist a spell, a trap, a poison, a disease, or a similar threat
+How to : roll a d20 and add the appropriate ability modifier
+---------------------------------------------------------------
+
+
+Attack Roll: When you make an attack, your attack roll determines
+whether the attack hits or misses
+How to: To make an attack roll, roll a d20 and add the appropriate modifiers
+
+If the total of the roll plus modifiers equals or exceeds the
+target’s Armor Class (AC), the attack hits.
+
+-----------------------------------------------------------------
+Combat: 
+
+2. Establish positions. The DM decides where all the
+characters and monsters are located. Given the
+adventurers’ marching order or their stated positions in
+the room or other location, the DM figures out where the
+adversaries are— how far away and in what direction.
+3. Roll initiative. Everyone involved in the combat encounter
+rolls initiative, determining the order of combatants’ turns.
+4. Take turns. Each participant in the battle takes a turn in
+initiative order. 
+-you can move a distance up to your speed
+and take one action
+5. Begin the next round. When everyone involved in the
+combat has had a turn, the round ends. Repeat step 4 until
+the fighting stops.
+
+Level up:
+
+Experience points => Level up 
+Each time you gain a level, you gain 1 additional Hit Die. Roll that Hit Die, add your Constitution modifier to the roll, and add the total to your hit point maximum.
+When your Constitution modifier increases by 1, your hit point maximum increases by 1 for each level you have attained.

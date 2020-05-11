@@ -72,7 +72,7 @@ public class GameServer {
                                                 out.write(toSend);
                                                 e.printStackTrace();
                                             }
-                                            payLoad  = ProtocolHandler.response(payLoad,s);
+                                            payLoad  = ProtocolHandler.parse(payLoad,s);
                                                 System.out.println(payLoad);
                                             byte [] toSend = payLoad.toString().getBytes();
                                             out.write(toSend);

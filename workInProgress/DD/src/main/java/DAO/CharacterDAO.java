@@ -20,8 +20,15 @@ public class CharacterDAO {
         query.put("_id", id);
         query.put("name", name);
         DBObject character = Database.findDocument(collectionName,query);
-        Character character1= gson.fromJson(character.toString(),Character.class);
-        return character1;
+         return gson.fromJson(character.toString(),Character.class);
+    }
+
+    public static Character findCharacterByName(String name){
+        Gson gson = new Gson();
+        BasicDBObject query = new BasicDBObject();
+        query.put("name", name);
+        DBObject character = Database.findDocument(collectionName,query);
+        return gson.fromJson(character.toString(),Character.class);
     }
 
 }
