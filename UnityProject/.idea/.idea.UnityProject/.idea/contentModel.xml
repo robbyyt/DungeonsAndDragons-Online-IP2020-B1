@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Ciubi\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Ciubi\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_UnityProject.1340673032.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Ciubi\Documents\GitHub\DungeonsAndDragons-Online-IP2020-B1\UnityProject" t="IncludeRecursive">
+    <e p="C:\Users\rober\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\rober\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_UnityProject.791769772.00" t="ExcludeRecursive" />
+    <e p="C:\Users\rober\Documents\GitHub\DungeonsAndDragons-Online-IP2020-B1\UnityProject" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Firebase" t="Include">
@@ -580,6 +580,12 @@
             <e p="Database" t="Include">
               <e p="DatabaseHandler.cs" t="Include" />
             </e>
+            <e p="Gameplay" t="Include">
+              <e p="Turns" t="Include">
+                <e p="TurnManager.cs" t="Include" />
+                <e p="TurnManagerListener.cs" t="Include" />
+              </e>
+            </e>
             <e p="Network" t="Include">
               <e p="NetworkController.cs" t="Include" />
             </e>
@@ -604,6 +610,9 @@
             </e>
           </e>
           <e p="EnterDungeon.cs" t="Include" />
+          <e p="Instantiate" t="Include">
+            <e p="GameSetupController.cs" t="Include" />
+          </e>
           <e p="Lobby" t="Include">
             <e p="Characters" t="Include">
               <e p="Archer.cs" t="Include" />
@@ -623,6 +632,7 @@
               <e p="Warrior.cs" t="Include" />
             </e>
             <e p="CurrentPlayer.cs" t="Include" />
+            <e p="LoadStartGameScene.cs" t="Include" />
             <e p="LobbyManager.cs" t="Include" />
             <e p="LobbyMenuButtons.cs" t="Include" />
             <e p="LobbyPlayer.cs" t="Include" />
