@@ -15,7 +15,15 @@ public class GameSetupController : MonoBehaviour
 
     private void createPlayer()
     {
-        PlayerRole = Player.getRole();
+        if (PhotonNetwork.LocalPlayer.IsMasterClient == true)
+        {
+            PlayerRole = Role.ADMIN;
+        }
+        else
+        {
+            PlayerRole = Player.getRole();
+        }
+        
         Debug.Log("Creating Player");
         if (PhotonNetwork.LocalPlayer.IsMasterClient == true)
         {
