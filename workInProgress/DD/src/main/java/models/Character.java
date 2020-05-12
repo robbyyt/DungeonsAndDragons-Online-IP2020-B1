@@ -8,17 +8,17 @@ public class Character {
     String race;
     int level=1;
     int experiencePoints;
+    int hitDice;
     //ability check... modifiers
 
     int strength;
-    int dexteriry;
-
+    int dexterity;
+    int constitution;
     int intelligence;
     int wisdom;
     int charisma;
 
     ///////////
-    int constitution;
     int profienceBonus;
     int armourClass;
     int intiative;
@@ -29,7 +29,7 @@ public class Character {
     SavingThrows savingThrows;
     Skills skills;
     OtherProficienciesAndLanguages otherProficienciesAndLanguages;
-    String equipament;
+    String equipment;
     String personalityTraits;
     String ideals;
     String bonds;
@@ -42,7 +42,7 @@ public class Character {
             String race,
             int experiencePoints,
             int strength,
-            int dexteriry,
+            int dexterity,
             int constitution,
             int intelligence,
             int wisdom,
@@ -57,7 +57,7 @@ public class Character {
             SavingThrows savingThrows,
             Skills skills,
             OtherProficienciesAndLanguages otherProficienciesAndLanguages,
-            String equipament,
+            String equipment,
             String personalityTraits,
             String ideals,
             String bonds,
@@ -69,7 +69,7 @@ public class Character {
         this.background = background;
         this.experiencePoints =experiencePoints;
         this.strength=strength;
-        this.dexteriry=dexteriry;
+        this.dexterity = dexterity;
         this.constitution=constitution;
         this.intelligence=intelligence;
         this.wisdom=wisdom;
@@ -83,16 +83,23 @@ public class Character {
         this.savingThrows=savingThrows;
         this.skills=skills;
         this.otherProficienciesAndLanguages=otherProficienciesAndLanguages;
-        this.equipament=equipament;
+        this.equipment = equipment;
         this.personalityTraits=personalityTraits;
         this.ideals=ideals;
         this.bonds=bonds;
         this.flaws=flaws;
         this.featureAndTraits=featureAndTraits;
     }
-
     public String getName() {
         return name;
+    }
+
+    public int getHitDice() {
+        return hitDice;
+    }
+
+    public void setHitDice(int hitDice) {
+        this.hitDice = hitDice;
     }
 
     public void setName(String name) {
@@ -139,12 +146,12 @@ public class Character {
         this.strength = strength;
     }
 
-    public int getDexteriry() {
-        return dexteriry;
+    public int getDexterity() {
+        return dexterity;
     }
 
-    public void setDexteriry(int dexteriry) {
-        this.dexteriry = dexteriry;
+    public void setDexterity(int dexterity) {
+        this.dexterity = dexterity;
     }
 
     public int getConstitution() {
@@ -251,12 +258,12 @@ public class Character {
         this.otherProficienciesAndLanguages = otherProficienciesAndLanguages;
     }
 
-    public String getEquipament() {
-        return equipament;
+    public String getEquipment() {
+        return equipment;
     }
 
-    public void setEquipament(String equipament) {
-        this.equipament = equipament;
+    public void setEquipment(String equipment) {
+        this.equipment = equipment;
     }
 
     public String getPersonalityTraits() {
