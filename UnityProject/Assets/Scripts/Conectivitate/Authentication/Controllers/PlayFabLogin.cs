@@ -14,6 +14,8 @@ public class PlayFabLogin : MonoBehaviour
     public InputField loginEmailField;
     public InputField loginPasswordField;
     public InputField passwordRecoveryEmailField;
+    public GameObject responsePanel;
+    public Text responseText;
     public void Start()
     {
         //Note: Setting title Id here can be skipped if you have set the value in Editor Extensions already.
@@ -42,9 +44,7 @@ public class PlayFabLogin : MonoBehaviour
     private void OnLoginFailure(PlayFabError error)
     {
         Debug.LogWarning("Something went wrong with your login call.");
-        Debug.Log(error.GenerateErrorReport());
-        Debug.Log(loginEmailField.text);
-        Debug.Log(loginPasswordField.text);
+        EnableGuiElement(error.ErrorMessage);
     }
     #endregion
     #region Register
@@ -65,7 +65,7 @@ public class PlayFabLogin : MonoBehaviour
 
     private void OnRegisterSuccess(RegisterPlayFabUserResult result)
     {
-        Debug.Log("You have registered successfully!");
+        EnableGuiElement("You have registered successfully!");
         var request = new AddOrUpdateContactEmailRequest
         {
             EmailAddress = emailField.text
@@ -78,11 +78,27 @@ public class PlayFabLogin : MonoBehaviour
             Debug.Log("Adresa de e-mail nu a putut fi setata.");
         });
     }
+
+    private void EnableGuiElement(string message)
+    {
+        if (responsePanel != null)
+        {
+            responseText.text = message;
+            responsePanel.SetActive(true);
+        }
+    }
+
+    public void DisableGuiElement()
+    {
+        if (responsePanel != null)
+        {
+            responsePanel.SetActive(!responsePanel.activeSelf);
+        }
+    }
     
     private void OnRegisterFailure(PlayFabError error)
     {
-        Debug.LogWarning("Something went wrong with your register call.");
-        Debug.Log(error.GenerateErrorReport());
+        EnableGuiElement(error.ErrorMessage);
     }
     #endregion
     #region resetPwd
