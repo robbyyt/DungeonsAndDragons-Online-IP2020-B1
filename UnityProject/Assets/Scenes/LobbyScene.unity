@@ -6731,6 +6731,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPanePrefab: {fileID: 8122523715524872105, guid: c039be4bce499e2499371d59fe2a3900,
     type: 3}
+  playerPanelAuxPrefab: {fileID: 4829132920239902103, guid: fcfe39cf1894a46418a5a2af66c7b43c,
+    type: 3}
   playersScrollArea: {fileID: 1116962706}
   lobbyManager: {fileID: 1689868986}
 --- !u!1 &1266409658
