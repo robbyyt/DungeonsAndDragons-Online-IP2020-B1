@@ -9,11 +9,17 @@ public class TCPClient : MonoBehaviour
     private static TcpClient socketConnection;
 
     private static Thread clientReceiveThread;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         ConnectToTcpServer();
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -67,7 +73,7 @@ public class TCPClient : MonoBehaviour
         }     
     }
 
-    private static void SendMessage(string clientMessage)
+    public static void SendMessage(string clientMessage)
     {
         if (socketConnection == null) {             
             return;         
@@ -91,6 +97,11 @@ public class TCPClient : MonoBehaviour
 
     private void HandleResponse(string serverResponse)
     {
+        Debug.Log("SERVER RESPONSE:");
+        if (serverResponse.Contains("CREATE_LOBBY") && serverResponse.Contains("SUCCESS"))
+        {
+            MainThread.Call(CustomLobby.getInstance().CreateRoom);
+        }
         Debug.Log(serverResponse);
     }
 }

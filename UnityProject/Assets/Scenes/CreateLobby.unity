@@ -765,7 +765,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1795709373}
-        m_MethodName: CreateRoom
+        m_MethodName: CreateRoomV2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

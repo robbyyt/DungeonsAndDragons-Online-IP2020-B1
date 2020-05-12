@@ -4,6 +4,7 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using DefaultNamespace;
 using UnityEngine.SceneManagement;
 
 public class CustomLobby : MonoBehaviourPunCallbacks, ILobbyCallbacks  
@@ -15,7 +16,7 @@ public class CustomLobby : MonoBehaviourPunCallbacks, ILobbyCallbacks
     public GameObject roomListingPrefab;
     public Transform roomsPanel;
     public Text playerName;
-
+    
     private void Awake()
     {
         lobby = this;
@@ -31,11 +32,24 @@ public class CustomLobby : MonoBehaviourPunCallbacks, ILobbyCallbacks
         playerName.text = PhotonNetwork.LocalPlayer.NickName;
     }
 
+    public static CustomLobby getInstance()
+    {
+        return lobby;
+    }
+
     public void CreateRoom()
     {
         RoomOptions roomOptions = new RoomOptions() { IsVisible = true, IsOpen = true, PublishUserId = true, MaxPlayers = (byte)roomSize };
-        PhotonNetwork.CreateRoom(roomName, roomOptions);
+        PhotonNetwork.CreateRoom(roomName, roomOptions);    
         SceneManager.LoadScene("LobbyScene");
+    }
+
+    public void CreateRoomV2()
+    {
+        CreateLobbyRequest createLobbyRequest = new CreateLobbyRequest("robb",roomName,roomSize.ToString());
+        string json = JsonUtility.ToJson(createLobbyRequest);
+        Debug.Log(json);
+        TCPClient.SendMessage(json);
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
