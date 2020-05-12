@@ -55,9 +55,8 @@ public class PlayFabLogin : MonoBehaviour
         string username = usernameField.text;
         var request = new RegisterPlayFabUserRequest
         {
-            Email = email, 
-            Username = username, 
             Email = email,
+            Password = password,
             Username = username,
             DisplayName = username
         };

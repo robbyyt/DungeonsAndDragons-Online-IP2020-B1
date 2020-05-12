@@ -29,6 +29,7 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
             Player player = PhotonNetwork.LocalPlayer;
             IsAdmin = player.IsMasterClient;
             Debug.Log(AppUser.username);
+            NickName = AppUser.username;
             if(NickName != "")
             {
                 if(IsAdmin==true)

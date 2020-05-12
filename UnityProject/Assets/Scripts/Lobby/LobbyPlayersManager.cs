@@ -28,11 +28,9 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
 
-       
 
         PhotonNetwork.PlayerList.ToList().ForEach(x =>
         {
-            
 
             if(!x.IsLocal)
             {
