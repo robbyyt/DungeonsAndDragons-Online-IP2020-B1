@@ -16,6 +16,7 @@ public class PlayFabLogin : MonoBehaviour
     public InputField passwordRecoveryEmailField;
     public GameObject responsePanel;
     public Text responseText;
+    public GameObject successText;
     public void Start()
     {
         //Note: Setting title Id here can be skipped if you have set the value in Editor Extensions already.
@@ -27,12 +28,15 @@ public class PlayFabLogin : MonoBehaviour
     #region Login
     public void Login()
     {
-        var request = new LoginWithEmailAddressRequest {Email = loginEmailField.text, Password = loginPasswordField.text};
-        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnLoginFailure);
+        {
+            var request = new LoginWithEmailAddressRequest
+                {Email = loginEmailField.text, Password = loginPasswordField.text};
+            PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnLoginFailure);
+        }
     }
     private void OnLoginSuccess(LoginResult result)
     {
-        Debug.Log("You have logged in successfully!");
+        successText.SetActive(true);
         var request = new GetAccountInfoRequest{Email = loginEmailField.text};
         PlayFabClientAPI.GetAccountInfo(request, task =>
         {
@@ -44,7 +48,7 @@ public class PlayFabLogin : MonoBehaviour
     private void OnLoginFailure(PlayFabError error)
     {
         Debug.LogWarning("Something went wrong with your login call.");
-        EnableGuiElement("Email sau parola gresite.");
+        EnableGuiElement(error.ErrorMessage);
     }
     #endregion
     #region Register
@@ -52,7 +56,18 @@ public class PlayFabLogin : MonoBehaviour
     {
         string email = emailField.text;
         string password = passwordField.text;
+        string verifyPassword = passwordVerificationField.text;
         string username = usernameField.text;
+        if (email.Equals("") || password.Equals("") || username.Equals(""))
+        {
+            EnableGuiElement("Please fill in all of the inputs!");
+            return;
+        }
+        if (!password.Equals(verifyPassword))
+        {
+            EnableGuiElement("The password do not match.");
+            return;
+        }
         var request = new RegisterPlayFabUserRequest
         {
             Email = email,
@@ -61,6 +76,7 @@ public class PlayFabLogin : MonoBehaviour
             DisplayName = username
         };
         PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnRegisterFailure);
+        
     }
 
     private void OnRegisterSuccess(RegisterPlayFabUserResult result)

@@ -2,7 +2,6 @@
 using Photon.Realtime;
 using UnityEngine;
 using System;
-using Conectivitate.Authentication.Models;
 
 public class CurrentPlayer : MonoBehaviourPunCallbacks
 {
@@ -18,6 +17,7 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
     {
         PlayerRole = Role.UNKNOWN;
         PlayerLevel = 0;
+        DontDestroyOnLoad(gameObject);
 
     }
 
@@ -28,9 +28,8 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
         {
             Player player = PhotonNetwork.LocalPlayer;
             IsAdmin = player.IsMasterClient;
-            Debug.Log(AppUser.username);
-            NickName = AppUser.username;
-            if(NickName != "")
+            NickName = player.NickName;
+            if (NickName != "")
             {
                 if(IsAdmin==true)
                 {
@@ -50,16 +49,16 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
 
     public void UpdateRole(Role role)
     {
-		if(IsAdmin == false){
-        	this.PlayerRole = role;
+        if(IsAdmin == false){
+            this.PlayerRole = role;
 
-        	if (this.panel != null)
-        	{
-            	this.panel.UpdateRole(role);
-        	}
-        	manager.UpdatePlayerReccomandationRoles();
-        	GetComponent<LobbyRpc>().UpdateForGodSake(PhotonNetwork.LocalPlayer.UserId, role);
-    	}
-	}
+            if (this.panel != null)
+            {
+                this.panel.UpdateRole(role);
+            }
+            manager.UpdatePlayerReccomandationRoles();
+            GetComponent<LobbyRpc>().UpdateForGodSake(PhotonNetwork.LocalPlayer.UserId, role);
+        }
+    }
 
 }

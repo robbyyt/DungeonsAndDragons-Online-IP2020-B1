@@ -27,8 +27,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        PhotonNetwork.SetMasterClient(PhotonNetwork.PlayerList[1]);
-        UpdateAdminRights();
+        //PhotonNetwork.SetMasterClient(PhotonNetwork.PlayerList[1]);
+        //UpdateAdminRights();
         
     }
 
