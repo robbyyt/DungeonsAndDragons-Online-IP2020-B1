@@ -1,18 +1,26 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections;
+using System.Runtime.CompilerServices;
+using UnityEngine;
 
 namespace Conectivitate.Authentication.Models
 {
-    public class AppUser
+    public class AppUser : MonoBehaviour
     {
-        public static string userName;
-        public static string id;
-        public static bool set; // daca user-ul curent a fost setat
+        public static AppUser Instance { get; private set; }
 
-        public static void SetUser(User user)
+        public static string username="";
+        public string id;
+        public bool set;
+
+        private void Awake()
         {
-            userName = user.userName;
-            id = user.id;
-            set = true;
+            if (Instance != null)
+            {
+                Destroy(gameObject);
+            }
+            else 
+                Instance = this;
+            DontDestroyOnLoad(this);
         }
     }
 }

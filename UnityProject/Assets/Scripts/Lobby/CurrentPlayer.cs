@@ -17,6 +17,7 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
     {
         PlayerRole = Role.UNKNOWN;
         PlayerLevel = 0;
+        DontDestroyOnLoad(gameObject);
 
     }
 
@@ -39,8 +40,8 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
                 {
                     LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(player.UserId), PlayerLevel, NickName, PlayerRole);
                     panel = manager.lobbyPlayersManager.AddPlayerToLobby(lobbyPlayer);
-                }    
-                
+                }
+
             }
 
         }
@@ -48,16 +49,16 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
 
     public void UpdateRole(Role role)
     {
-		if(IsAdmin == false){
-        	this.PlayerRole = role;
-			
-        	if (this.panel != null)
-        	{
-            	this.panel.UpdateRole(role);
-        	}
-        	manager.UpdatePlayerReccomandationRoles();
-        	GetComponent<LobbyRpc>().UpdateForGodSake(PhotonNetwork.LocalPlayer.UserId, role);
-    	}
-	}
+        if(IsAdmin == false){
+            this.PlayerRole = role;
+
+            if (this.panel != null)
+            {
+                this.panel.UpdateRole(role);
+            }
+            manager.UpdatePlayerReccomandationRoles();
+            GetComponent<LobbyRpc>().UpdateForGodSake(PhotonNetwork.LocalPlayer.UserId, role);
+        }
+    }
 
 }

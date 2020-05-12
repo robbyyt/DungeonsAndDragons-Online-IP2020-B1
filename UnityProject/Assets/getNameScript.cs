@@ -11,14 +11,7 @@ public class getNameScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PhotonNetwork.LocalPlayer.NickName = nickname.text;
-        nickname.text = AppUser.userName;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        PhotonNetwork.LocalPlayer.NickName = nickname.text;
-        nickname.text = AppUser.userName;
+        nickname.text = AppUser.username;
+        PhotonNetwork.LocalPlayer.NickName = AppUser.username;
     }
 }

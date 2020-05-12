@@ -28,10 +28,10 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
 
-       
+
         PhotonNetwork.PlayerList.ToList().ForEach(x =>
         {
-            
+
             if(!x.IsLocal)
             {
                 if(x.IsMasterClient == true)
@@ -41,7 +41,7 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
                     lobbyManager.UpdateAdminRights();
                     //CharacterDisplayed.SetActive(false);
                     //CharactersPanel.SetActive(false);
-                }    
+                }
                 else
                 {
                      lobbyPlayer = new LobbyPlayer(Guid.Parse(x.UserId), 0, x.NickName, Role.UNKNOWN);
@@ -49,20 +49,20 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
                     lobbyManager.UpdateAdminRights();
                     //CharacterDisplayed.SetActive(true);
                     //CharactersPanel.SetActive(true);
-                }    
-                    
+                }
 
-            }            
+
+            }
         });
 
-        
+
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-             lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, newPlayer.NickName, Role.UNKNOWN);
-            AddPlayerToLobby(lobbyPlayer);
-            lobbyManager.UpdateAdminRights();
+        LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, newPlayer.NickName, Role.UNKNOWN);
+        AddPlayerToLobby(lobbyPlayer);
+        lobbyManager.UpdateAdminRights();
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
@@ -85,8 +85,8 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
         lobbyManager.UpdatePlayerReccomandationRoles();
         return pane.GetComponent<PlayerPanel>();
     }
-   
-   
+
+
 
     public void KickPlayer(Guid id)
     {
@@ -129,5 +129,5 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
         return playerPanels.Select(x => x.GetComponent<PlayerPanel>()).ToList();
     }
 
-    
+
 }
