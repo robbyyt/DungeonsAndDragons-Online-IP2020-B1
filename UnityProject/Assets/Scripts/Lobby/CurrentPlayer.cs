@@ -2,6 +2,7 @@
 using Photon.Realtime;
 using UnityEngine;
 using System;
+using Conectivitate.Authentication.Models;
 
 public class CurrentPlayer : MonoBehaviourPunCallbacks
 {
@@ -27,8 +28,8 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
         {
             Player player = PhotonNetwork.LocalPlayer;
             IsAdmin = player.IsMasterClient;
-            NickName = player.NickName;
-            if (NickName != "")
+            Debug.Log(AppUser.username);
+            if(NickName != "")
             {
                 if(IsAdmin==true)
                 {
@@ -39,8 +40,8 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
                 {
                     LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(player.UserId), PlayerLevel, NickName, PlayerRole);
                     panel = manager.lobbyPlayersManager.AddPlayerToLobby(lobbyPlayer);
-                }    
-                
+                }
+
             }
 
         }
@@ -50,7 +51,7 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
     {
 		if(IsAdmin == false){
         	this.PlayerRole = role;
-			
+
         	if (this.panel != null)
         	{
             	this.panel.UpdateRole(role);

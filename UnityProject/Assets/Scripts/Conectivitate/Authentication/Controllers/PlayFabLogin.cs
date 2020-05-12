@@ -56,8 +56,9 @@ public class PlayFabLogin : MonoBehaviour
         var request = new RegisterPlayFabUserRequest
         {
             Email = email, 
-            Password = password, 
             Username = username, 
+            Email = email,
+            Username = username,
             DisplayName = username
         };
         PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnRegisterFailure);
@@ -95,7 +96,7 @@ public class PlayFabLogin : MonoBehaviour
             responsePanel.SetActive(!responsePanel.activeSelf);
         }
     }
-    
+
     private void OnRegisterFailure(PlayFabError error)
     {
         EnableGuiElement(error.ErrorMessage);
@@ -112,12 +113,12 @@ public class PlayFabLogin : MonoBehaviour
         };
         PlayFabClientAPI.SendAccountRecoveryEmail(request, OnAccountRecoverySuccess, OnAccountRecoveryFailure);
     }
-    
+
     private void OnAccountRecoverySuccess(SendAccountRecoveryEmailResult obj)
     {
         Debug.Log("Email sent!");
     }
-    
+
     private void OnAccountRecoveryFailure(PlayFabError error)
     {
         Debug.Log("Email not sent!");
