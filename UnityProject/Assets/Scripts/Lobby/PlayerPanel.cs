@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class PlayerPanel : MonoBehaviour
 {
@@ -20,6 +22,8 @@ public class PlayerPanel : MonoBehaviour
         PlayerLevel.text = "Level: " + player.level;
         PlayerName.text = player.name;
         PlayerRole.text = player.role.ToString();
+
+		//!
         UpdateMuteText();
     }
 
@@ -48,6 +52,7 @@ public class PlayerPanel : MonoBehaviour
 
     private void UpdateMuteText()
     {
+		if(PhotonNetwork.LocalPlayer.IsMasterClient == true)  // !
         MuteText.text = LobbyPlayer.muted ? "Unmute" : "Mute";
     }
     

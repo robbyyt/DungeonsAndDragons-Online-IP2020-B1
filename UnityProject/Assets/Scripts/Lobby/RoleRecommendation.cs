@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public enum Role
 {
-    MAGE, WARRIOR, CLERIC, ROGUE, ARCHER, UNKNOWN
+    MAGE, WARRIOR, CLERIC, ROGUE, ARCHER, UNKNOWN, ADMIN
 }
 
 public class RoleRecommendation : MonoBehaviour
@@ -70,4 +70,5 @@ public class RoleRecommendation : MonoBehaviour
     {
         MaxNumberOfPlayersSlider.gameObject.SetActive(true);
     }
+
 }

@@ -9,35 +9,44 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     private List<RoleRecommendation> roleRecommendationList;
     public LobbyPlayersManager lobbyPlayersManager;
 
-    
+
     public GameObject ScenarioDescriprionPanel;
     public GameObject RecommandedRolesPanel;
 
     public Button StartButton;
 
-    public bool IsGameMaster;
+    public bool IsGameMaster =false;
 
     public void Awake()
     {
+        
         roleRecommendationList = RecommandedRolesPanel.transform
                                     .GetComponentsInChildren<RoleRecommendation>()
-                                    .ToList();       
+                                    .ToList();
     }
+
     private void Start()
     {
+        PhotonNetwork.SetMasterClient(PhotonNetwork.PlayerList[1]);
         UpdateAdminRights();
+        
     }
+
     public void UpdateAdminRights()
     {
         if (PhotonNetwork.LocalPlayer.IsMasterClient == true)
         {
+           
             ShowAdminRights();
+
         }
         else
         {
             DisableAdminRights();
         }
     }
+
+    
     public void UpdatePlayerReccomandationRoles()
     {
         roleRecommendationList.ForEach(x =>
@@ -51,6 +60,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         ScenarioDescriprionPanel.SetActive(true);
         RecommandedRolesPanel.SetActive(false);
+
     }
 
     public void ShowRecommandedRoles()
@@ -80,5 +90,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         UpdateAdminRights();
     }
+
 }
 
