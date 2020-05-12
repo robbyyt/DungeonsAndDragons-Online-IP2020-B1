@@ -60,4 +60,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LobbyScene.unity
     guid: 1378f6b4f572fc346b47c0865c01c05c
+  - enabled: 1
+    path: Assets/Scenes/Login_Register.unity
+    guid: 685a4088ccb5cc94c8b5d6080e39e0eb
+  - enabled: 1
+    path: Assets/Scenes/MultiplayerSceneDemo.unity
+    guid: 06a3608a4be54ba44ad149ec583fc740
   m_configObjects: {}

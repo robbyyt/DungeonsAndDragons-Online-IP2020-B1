@@ -7,11 +7,11 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
 {
     public bool IsAdmin;
     public string NickName = "";
-    public Role PlayerRole;
+    public  Role PlayerRole;
     public int PlayerLevel;
     public LobbyManager manager;
     public PlayerPanel panel = null;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,11 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
 
     }
 
+    public Role getRole()
+    {
+        return PlayerRole;
+    }
+    
     // Update is called once per frame
     public override void OnJoinedRoom()
     {
@@ -49,16 +54,16 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
 
     public void UpdateRole(Role role)
     {
-        if(IsAdmin == false){
-            this.PlayerRole = role;
+		if(IsAdmin == false){
+        	this.PlayerRole = role;
 
             if (this.panel != null)
-            {
-                this.panel.UpdateRole(role);
-            }
-            manager.UpdatePlayerReccomandationRoles();
-            GetComponent<LobbyRpc>().UpdateForGodSake(PhotonNetwork.LocalPlayer.UserId, role);
-        }
-    }
+        	{
+            	this.panel.UpdateRole(role);
+        	}
+        	manager.UpdatePlayerReccomandationRoles();
+        	GetComponent<LobbyRpc>().UpdateForGodSake(PhotonNetwork.LocalPlayer.UserId, role);
+    	}
+	}
 
 }
