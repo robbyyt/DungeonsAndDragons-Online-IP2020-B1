@@ -23,16 +23,7 @@ public class Chat : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        //Initialize Photon View
-        if(gameObject.GetComponent<PhotonView>() == null)
-        {
-            PhotonView photonView = gameObject.AddComponent<PhotonView>();
-            photonView.ViewID = 1;
-        }
-        else
-        {
-            photonView.ViewID = 1;
-        }
+        
     }
 
     // Update is called once per frame

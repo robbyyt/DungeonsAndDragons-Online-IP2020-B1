@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0600f4ca-cd63-44bc-9ec0-13c3781dbd40" name="Default Changelist" comment="" />
+    <list default="true" id="4fac8ced-6766-4a09-8997-799bf633be73" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../PanelOpener.cs" root0="SKIP_HIGHLIGHTING" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/NetworkPrefab.cs" />
-        <option value="$PROJECT_DIR$/MasterManager.cs" />
+        <option value="$PROJECT_DIR$/GameSetupController.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1bo1fC2YhrFwPK11JYyOSLGGrWj" />
+  <component name="ProjectId" id="1boHgTdhZDMBYb7TKR5mhEpQedY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,26 +41,30 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0600f4ca-cd63-44bc-9ec0-13c3781dbd40" name="Default Changelist" comment="" />
-      <created>1589283734448</created>
+      <changelist id="4fac8ced-6766-4a09-8997-799bf633be73" name="Default Changelist" comment="" />
+      <created>1589291638021</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1589283734448</updated>
-      <workItem from="1589283744868" duration="1888000" />
+      <updated>1589291638021</updated>
+      <workItem from="1589291646377" duration="261000" />
+      <workItem from="1589291995690" duration="866000" />
+      <workItem from="1589298502107" duration="1721000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
