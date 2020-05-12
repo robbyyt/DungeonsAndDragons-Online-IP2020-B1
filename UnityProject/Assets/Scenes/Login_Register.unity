@@ -2767,7 +2767,6 @@ MonoBehaviour:
   passwordRecoveryEmailField: {fileID: 1272922674}
   responsePanel: {fileID: 707158347}
   responseText: {fileID: 2034387489}
->>>>>>> Stashed changes
 --- !u!1 &1741857364
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,8 +3733,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &2034387487
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,4 +4016,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134881079}
   m_CullTransparentMesh: 0
->>>>>>> Stashed changes
