@@ -27,8 +27,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        PhotonNetwork.SetMasterClient(PhotonNetwork.PlayerList[1]);
-        UpdateAdminRights();
+        //PhotonNetwork.SetMasterClient(PhotonNetwork.PlayerList[1]);
+        //UpdateAdminRights();
         
     }
 
@@ -51,9 +51,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         roleRecommendationList.ForEach(x =>
                 x.UpdateCurrentNumberOfPlayers(
-                    lobbyPlayersManager.GetPlayers()
-                                        .Where(player => player.role == x.Role)
-                                        .Count()));
+                    lobbyPlayersManager
+                        .GetPlayers()
+                        .Count(player => player.role == x.Role)));
     }
 
     public void ShowScenarioDescription()

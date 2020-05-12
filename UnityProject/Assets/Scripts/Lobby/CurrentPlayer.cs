@@ -17,6 +17,7 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
     {
         PlayerRole = Role.UNKNOWN;
         PlayerLevel = 0;
+        DontDestroyOnLoad(gameObject);
 
     }
 
@@ -44,8 +45,8 @@ public class CurrentPlayer : MonoBehaviourPunCallbacks
                 {
                     LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(player.UserId), PlayerLevel, NickName, PlayerRole);
                     panel = manager.lobbyPlayersManager.AddPlayerToLobby(lobbyPlayer);
-                }    
-                
+                }
+
             }
 
         }

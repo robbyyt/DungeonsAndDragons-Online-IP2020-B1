@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8d7310b4-558f-49de-87b7-2bf2bf8de029" name="Default Changelist" comment="Reset password + am rezolvat bug-ul in care nu lua tot email-ul, ci doar textul care era vizibil">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityProject/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/PlayFabLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Controllers/PlayFabLogin.cs" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +32,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/Photon/CustomLobby.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/CurrentPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayersManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MainUser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lobby/LobbyPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Authentication/Models/NewUserRegister.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Conectivitate/Database/DatabaseHandler.cs" root0="FORCE_HIGHLIGHTING" />
@@ -142,6 +147,17 @@
       <workItem from="1588621960724" duration="3018000" />
       <workItem from="1588689964180" duration="9021000" />
       <workItem from="1588700633957" duration="5273000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1588755816258" duration="462000" />
+      <workItem from="1588881382607" duration="5142000" />
+      <workItem from="1588920324859" duration="4088000" />
+      <workItem from="1588962943534" duration="1292000" />
+      <workItem from="1588966308624" duration="9106000" />
+      <workItem from="1589097906024" duration="4808000" />
+      <workItem from="1589221074679" duration="733000" />
+      <workItem from="1589281009059" duration="4427000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="Reset password + am rezolvat bug-ul in care nu lua tot email-ul, ci doar textul care era vizibil">
       <created>1588624973335</created>

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Conectivitate.Authentication.Models
@@ -7,6 +8,7 @@ namespace Conectivitate.Authentication.Models
     {
         public string userName;
         public string id;
+        public bool set = false;
 
         public User()
         {
@@ -16,6 +18,7 @@ namespace Conectivitate.Authentication.Models
         {
             this.id = dictionary["id"].ToString();
             this.userName = dictionary["userName"].ToString();
+            this.set = true;
         }
 
         public User(string userName, string localId)
