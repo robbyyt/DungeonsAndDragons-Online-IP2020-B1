@@ -66,6 +66,7 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
         playerPanels.Remove(playerPanelToDelete);
         Destroy(playerPanelToDelete);
         lobbyManager.UpdatePlayerReccomandationRoles();
+        
     }
 
     public List<LobbyPlayer> GetPlayers()

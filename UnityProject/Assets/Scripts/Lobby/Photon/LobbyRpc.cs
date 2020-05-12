@@ -2,6 +2,7 @@
 using UnityEngine;
 using System;
 using System.Linq;
+using Photon.Realtime;
 
 public class LobbyRpc : MonoBehaviourPunCallbacks
 {
@@ -27,5 +28,11 @@ public class LobbyRpc : MonoBehaviourPunCallbacks
             playerObject.GetComponent<PlayerPanel>().UpdateRole(role);
             lobbyPlayersManager.lobbyManager.UpdatePlayerReccomandationRoles();
         }
+    }
+
+    [PunRPC]
+    private void RPC_KickPlayer()
+    {
+        PhotonNetwork.LeaveRoom();
     }
 }
