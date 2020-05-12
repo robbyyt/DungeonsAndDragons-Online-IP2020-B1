@@ -1,115 +1,109 @@
-﻿using Photon.Chat;
-using Photon.Pun;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-//using ExitGames.Client.Photon.Chat;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class Chat : MonoBehaviour, IChatClientListener
+public class Chat : MonoBehaviourPun
 {
-    private ChatClient chatClient;
-    public InputField plrName;
-    public Text connectionState;
-    private string worldChat;
-    public InputField msgInput;
-    public Text msgArea;
-
-    public GameObject introPanel;
-    public GameObject msgPanel;
+    bool isChatting = false;
+    string chatInput = "";
     
+
+    [System.Serializable]
+    public class ChatMessage
+    {
+        public string sender = "";
+        public string message = "";
+        public float timer = 0;
+    }
+
+    List<ChatMessage> chatMessages = new List<ChatMessage>();
+
+    // Start is called before the first frame update
     void Start()
     {
-        Application.runInBackground = true;
-        if (string.IsNullOrEmpty(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat))
+        //Initialize Photon View
+        if(gameObject.GetComponent<PhotonView>() == null)
         {
-            print("No chat ID provided");
-            return;
+            PhotonView photonView = gameObject.AddComponent<PhotonView>();
+            photonView.ViewID = 1;
         }
-
-        connectionState.text = "Connecting...";
-        worldChat = "world";
-        //getConnected();
+        else
+        {
+            photonView.ViewID = 1;
+        }
     }
 
-    public void getConnected()
-    {
-        print("Trying to connect");
-        this.chatClient = new ChatClient(this);
-        this.chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, "anything",
-            new Photon.Chat.AuthenticationValues(plrName.text));
-        connectionState.text = "Connectiong to chat..";
-    }
-    // new ExitGame.Client. [...]
-    
+    // Update is called once per frame
     void Update()
     {
-        if(this.chatClient != null)
-        this.chatClient.Service();
+        if (Input.GetKeyUp(KeyCode.T) && !isChatting) ////////////////////////
+        {
+            isChatting = true;
+            chatInput = "";
+        }
+
+        //Hide messages after timer is expired
+        for (int i = 0; i < chatMessages.Count; i++)
+        {
+            if (chatMessages[i].timer > 0)
+            {
+                chatMessages[i].timer -= Time.deltaTime;
+            }
+        }
     }
 
-    public void sendMsg()
+    void OnGUI()
     {
-        this.chatClient.PublishMessage(worldChat, msgInput.text);
-    }
-    
-    public void OnConnected ()
-    {
-        print ("******     Connected");
-        introPanel.SetActive(false);
-        msgPanel.SetActive(true);
-    }
-    
-    public void OnDisconnected ()
-    {
+        if (!isChatting)////////////////////////
+        {
+            GUI.Label(new Rect(5, Screen.height - 25, 200, 25), "Press 'T' to chat");
+        }
+        else
+        {
+            if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Return )//////////////////////
+            {
+                isChatting = false;
+                if(chatInput.Replace(" ", "") != "")
+                {
+                    //Send message
+                    photonView.RPC("SendChat", RpcTarget.All, PhotonNetwork.LocalPlayer, chatInput);
+                }
+                chatInput = "";
+            }
+
+            GUI.SetNextControlName("ChatField");
+            GUI.Label(new Rect(5, Screen.height - 25, 200, 25), "Say:");
+            GUIStyle inputStyle = GUI.skin.GetStyle("box");
+            inputStyle.alignment = TextAnchor.MiddleLeft;
+            chatInput = GUI.TextField(new Rect(10 + 25, Screen.height - 27, 400, 22), chatInput, 60, inputStyle);
+
+            GUI.FocusControl("ChatField");
+        }
         
+        //Show messages
+        for(int i = 0; i < chatMessages.Count; i++)
+        {
+            if(chatMessages[i].timer > 0 || isChatting)
+            {
+                GUI.Label(new Rect(5, Screen.height - 50 - 25 * i, 500, 25), chatMessages[i].sender + ": " + chatMessages[i].message);
+            }
+        } 
     }
 
-
-    public void OnChatStateChange (ChatState state)
+    [PunRPC]
+    void SendChat(Player sender, string message)
     {
-        
-    }
+        ChatMessage m = new ChatMessage();
+        m.sender = sender.NickName;
+        m.message = message;
+        m.timer = 15.0f;
 
-    public void DebugReturn (ExitGames.Client.Photon.DebugLevel level, string message)
-    {
-       
+        chatMessages.Insert(0, m);
+        if(chatMessages.Count > 8)
+        {
+            chatMessages.RemoveAt(chatMessages.Count - 1);
+        }
     }
-
-    
-    public void OnGetMessages (string channelName, string[] senders, object[] messages)
-    {
-       
-    }
-
-    public void OnPrivateMessage (string sender, object message, string channelName)
-    {
-        
-    }
-
-    public void OnSubscribed (string[] channels, bool[] results)
-    {
-        
-    }
-
-    public void OnUnsubscribed (string[] channels)
-    {
-        
-    }
-
-    public void OnStatusUpdate (string user, int status, bool gotMessage, object message)
-    {
-        
-    }
-
-    public void OnUserSubscribed(string channel, string user)
-    {
-        
-    }
-
-    public void OnUserUnsubscribed(string channel, string user)
-    {
-        
-    }
-    
 }

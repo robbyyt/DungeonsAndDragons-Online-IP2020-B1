@@ -32,4 +32,9 @@ public class LobbyPlayer
         this.role = role;
     }
 
+	public Role getRole(LobbyPlayer player)
+	{
+		return this.role;
+	}
+
 }

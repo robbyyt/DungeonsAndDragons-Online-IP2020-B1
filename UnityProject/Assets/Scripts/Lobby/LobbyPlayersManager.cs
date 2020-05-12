@@ -2,7 +2,6 @@
 using Photon.Pun;
 using System.Collections.Generic;
 using System.Linq;
-using Conectivitate.Authentication.Models;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Realtime;
@@ -10,36 +9,60 @@ using Photon.Realtime;
 public class LobbyPlayersManager : MonoBehaviourPunCallbacks
 {
     private List<GameObject> playerPanels;
-    private int playersNumber;
-
+    private int  playersNumber = 1;
+    //public GameObject CharactersPanel;
+    //public GameObject CharacterDisplayed;
     public GameObject playerPanePrefab;
+	public GameObject playerPanelAuxPrefab;
     public GameObject playersScrollArea;
     public LobbyManager lobbyManager;
+	public LobbyPlayer lobbyPlayer;
 
     public void Start()
     {
         playerPanels = new List<GameObject>();
-        playersNumber = 1;  
+        playersNumber = 1;
     }
+
 
     public override void OnJoinedRoom()
     {
+
+       
         PhotonNetwork.PlayerList.ToList().ForEach(x =>
         {
+            
             if(!x.IsLocal)
             {
-                LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(x.UserId), 0, x.NickName, Role.UNKNOWN);
-                AddPlayerToLobby(lobbyPlayer);
+                if(x.IsMasterClient == true)
+                {
+                    lobbyPlayer = new LobbyPlayer(Guid.Parse(x.UserId), 0, x.NickName, Role.ADMIN);
+                    AddPlayerToLobby(lobbyPlayer);
+                    lobbyManager.UpdateAdminRights();
+                    //CharacterDisplayed.SetActive(false);
+                    //CharactersPanel.SetActive(false);
+                }    
+                else
+                {
+                     lobbyPlayer = new LobbyPlayer(Guid.Parse(x.UserId), 0, x.NickName, Role.UNKNOWN);
+                    AddPlayerToLobby(lobbyPlayer);
+                    lobbyManager.UpdateAdminRights();
+                    //CharacterDisplayed.SetActive(true);
+                    //CharactersPanel.SetActive(true);
+                }    
+                    
+
             }            
         });
-        lobbyManager.UpdateAdminRights();
+
+        
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        LobbyPlayer lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, AppUser.userName, Role.UNKNOWN);
-        AddPlayerToLobby(lobbyPlayer);
-        lobbyManager.UpdateAdminRights();
+             lobbyPlayer = new LobbyPlayer(Guid.Parse(newPlayer.UserId), 0, newPlayer.NickName, Role.UNKNOWN);
+            AddPlayerToLobby(lobbyPlayer);
+            lobbyManager.UpdateAdminRights();
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
@@ -49,7 +72,12 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
 
     public PlayerPanel AddPlayerToLobby(LobbyPlayer player)
     {
-        GameObject pane = Instantiate(playerPanePrefab, Vector3.zero, Quaternion.identity, playersScrollArea.transform);
+			GameObject pane ; //= null;
+		if(PhotonNetwork.LocalPlayer.IsMasterClient == true)
+        { pane = Instantiate(playerPanePrefab, Vector3.zero, Quaternion.identity, playersScrollArea.transform);  }//!!!!!!!!!!!!!!!!!!!!
+			else
+		{ pane = Instantiate(playerPanelAuxPrefab, Vector3.zero, Quaternion.identity, playersScrollArea.transform); } //!!!!!!!!!!!!!!!!!!!!
+
         pane.GetComponent<PlayerPanel>().SetPlayer(player, playersNumber);
         pane.GetComponent<PlayerPanel>().manager = this;
         playersNumber += 1;
@@ -57,7 +85,8 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
         lobbyManager.UpdatePlayerReccomandationRoles();
         return pane.GetComponent<PlayerPanel>();
     }
-  
+   
+   
 
     public void KickPlayer(Guid id)
     {
@@ -99,4 +128,6 @@ public class LobbyPlayersManager : MonoBehaviourPunCallbacks
     {
         return playerPanels.Select(x => x.GetComponent<PlayerPanel>()).ToList();
     }
+
+    
 }
