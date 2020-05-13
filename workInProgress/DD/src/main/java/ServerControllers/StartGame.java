@@ -1,9 +1,11 @@
 package ServerControllers;
 
+import DAO.DMDAO;
 import controllers.CharacterController;
 import controllers.LobbyController;
 import controllers.UserController;
 import models.Character;
+import models.DM;
 import models.Lobby;
 import models.User;
 import org.bson.types.ObjectId;
@@ -25,6 +27,7 @@ public class StartGame {
 
         ObjectId id = new ObjectId(roomId.toString());
         Lobby l = LobbyController.findById(id);
+
         l.getUserList();
         if(l.getDungeonMaster()==null){
             return noDungeonMaster();
@@ -49,7 +52,9 @@ public class StartGame {
             user.setCharacter(c);
             UserController.updateUser(user);
         }
-
+        DM dm = new DM();
+        dm.setUsername(l.getDungeonMaster());
+        DMDAO.create(dm);
         JSONObject json = new JSONObject();
         json.put("PROTOCOL", "START_GAME");
         json.put("SUCCESS", 1);
