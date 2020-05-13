@@ -9,7 +9,7 @@ public class CombatMode {
     List<User> users;
     String DM;
     List<NPC> npcs;
-    String  CombatTable [][];
+    String  CombatTable [][] = new String[10][10];
 
     public CombatMode(List<User> users, String DM, List<NPC> npcs, String [][] combatTable) {
         this.users = users;

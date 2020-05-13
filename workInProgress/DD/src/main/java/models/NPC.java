@@ -5,7 +5,7 @@ import org.bson.types.ObjectId;
 import java.util.List;
 
 public class NPC {
-    ObjectId id;
+    int id;
     String name;
     int armourClass;
     int hitPoints;
@@ -90,6 +90,14 @@ public class NPC {
 
     public void setDamageVulnerabilities(List<String> damageVulnerabilities) {
         this.damageVulnerabilities = damageVulnerabilities;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public List<String> getDamageImmunities() {

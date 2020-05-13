@@ -1,10 +1,14 @@
 package ServerControllers.gameProtocols.dice;
 
+import com.mongodb.util.JSON;
+import controllers.CharacterController;
 import controllers.UserController;
+import jdk.nashorn.internal.parser.JSONParser;
 import models.Character;
 import models.User;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import utils.DiceRoll;
 
 import static ServerControllers.gameProtocols.dice.Dice.sumDice;
 
@@ -39,8 +43,8 @@ public class AttackRoll {
         else if(modifier.compareTo("DEX")==0){
             sum+=character.getDexterity();
         }
-
         //ACTION ,
+
         return success(sum);
     }
 
