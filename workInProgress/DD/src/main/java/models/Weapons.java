@@ -1,24 +1,25 @@
 package models;
 
-public class WeaponAndArms {
+public class Weapons {
     String name;
     String id;
     String type;
+    int cost;
+    int dice;
     String properties;
-    String whyToUse;
-    String weight;
-    String cost;
+    int weight;
 
-    public WeaponAndArms(String name, String type, String properties, String whyToUse, String weight, String cost) {
+    public Weapons(String name, String id, String type, int cost, int dice, String properties, int weight) {
         this.name = name;
+        this.id = id;
         this.type = type;
+        this.cost = cost;
+        this.dice = dice;
         this.properties = properties;
-        this.whyToUse = whyToUse;
         this.weight=weight;
-        this.cost=cost;
     }
 
-    public WeaponAndArms() {
+    public Weapons() {
     }
 
     public String getName() {
@@ -53,28 +54,21 @@ public class WeaponAndArms {
         this.properties = properties;
     }
 
-    public String getWhyToUse() {
-        return whyToUse;
-    }
 
-    public void setWhyToUse(String whyToUse) {
-        this.whyToUse = whyToUse;
-    }
-
-    public String getWeight() {
-        return weight;
-    }
-
-    public void setWeight(String weight) {
-        this.weight = weight;
-    }
-
-    public String getCost() {
+    public int getCost() {
         return cost;
     }
 
-    public void setCost(String cost) {
+    public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public int getDice() {
+        return dice;
+    }
+
+    public void setDice(int dice) {
+        this.dice = dice;
     }
 
 }
