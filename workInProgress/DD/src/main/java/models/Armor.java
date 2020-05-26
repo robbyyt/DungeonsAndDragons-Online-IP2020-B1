@@ -2,11 +2,23 @@ package models;
 
 public class Armor {
     String name;
-    int value;
+    String type;
+    String id;
+    int cost;
+    int armourClass;
+    String modifier;
+    int strength;
+    int weight;
 
-    public Armor(String name, int value) {
+    public Armor(String name, String type, String id, int cost, int armourClass, String modifier, int strength, int weight) {
         this.name = name;
-        this.value = value;
+        this.type = type;
+        this.cost = cost;
+        this.armourClass = armourClass;
+        this.modifier = modifier;
+        this.strength = strength;
+        this.weight = weight;
+        this.id=id;
     }
 
     public String getName() {
@@ -17,18 +29,51 @@ public class Armor {
         this.name = name;
     }
 
-    public int getValue() {
-        return value;
+    public String getType() {
+        return type;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setType(String type) {
+        this.type = type;
     }
-    public void armourSet(Armor armor)
-    {
-        if(armor.getName().equals("light armor")) setValue(11);
-        else if(armor.getName().equals("medium armor")) setValue(12);
-        else if(armor.getName().equals("hard armor")) setValue(13);
-        else if (armor.getName().equals("shield")) setValue(2);
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    public int getArmourClass() {
+        return armourClass;
+    }
+
+    public void setArmourClass(int armourClass) {
+        this.armourClass = armourClass;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 }
