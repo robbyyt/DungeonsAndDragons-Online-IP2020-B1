@@ -70,4 +70,5 @@ public class Weapons {
     public void setDice(int dice) {
         this.dice = dice;
     }
+
 }

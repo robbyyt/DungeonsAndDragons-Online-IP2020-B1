@@ -72,4 +72,5 @@ public class WeaponsGenerator {
         models.Weapons blowgun = new models.Weapons("blowgun", "10", "Martial Ranged Weapons", cost, dice, "Ammunition", weight);
         return blowgun;
     }
+
 }

@@ -76,4 +76,5 @@ public class Armor {
     public void setWeight(int weight) {
         this.weight = weight;
     }
+
 }

@@ -45,4 +45,5 @@ public class ArmorGenerator {
         models.Armor shield = new models.Armor("shield", "Shield", "11", 100, 2, " ", 0, 6);
         return shield;
     }
+
 }
