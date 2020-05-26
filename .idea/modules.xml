@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/workInProgress/DD/DD.iml" filepath="$PROJECT_DIR$/workInProgress/DD/DD.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/DungeonsAndDragons-Online-IP2020-B1.iml" filepath="$PROJECT_DIR$/.idea/DungeonsAndDragons-Online-IP2020-B1.iml" />
     </modules>
   </component>
